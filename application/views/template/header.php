@@ -26,6 +26,9 @@
                     <ul class="navbar-nav mr-3">
                         <li><a href="javascript:;" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
                     </ul>
+                    <div class="search-element">
+                        <h4 class="text-white">Sistem Manajemen Karyawan di PT. CobaCoding</h4>
+                    </div>
                 </form>
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -34,11 +37,11 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="javascript:;" class="dropdown-item has-icon">
-                                <i class="far fa-user"></i> Profile
+                                <i class="far fa-user"></i> Profil
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="javascript:;" class="dropdown-item has-icon text-danger">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                            <a href="javascript:;" class="dropdown-item has-icon text-danger tombol-keluar">
+                                <i class="fas fa-sign-out-alt"></i> Log Out
                             </a>
                         </div>
                     </li>

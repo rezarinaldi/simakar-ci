@@ -7,7 +7,7 @@ class dashboard extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Beranda';
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);

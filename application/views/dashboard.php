@@ -2,35 +2,35 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Beranda</h1>
+            <h1><?= $title ?></h1>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Total Admin</h4>
+                        </div>
+                        <div class="card-body">
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-danger">
                         <i class="far fa-user"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Admin</h4>
+                            <h4>Total Karyawan</h4>
                         </div>
                         <div class="card-body">
-                            10
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-danger">
-                        <i class="far fa-newspaper"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Karyawan</h4>
-                        </div>
-                        <div class="card-body">
-                            42
+                            0
                         </div>
                     </div>
                 </div>
@@ -38,14 +38,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-warning">
-                        <i class="far fa-file"></i>
+                        <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Jabatan</h4>
+                            <h4>Total Jabatan</h4>
                         </div>
                         <div class="card-body">
-                            1,201
+                            0
                         </div>
                     </div>
                 </div>
@@ -53,14 +53,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-success">
-                        <i class="fas fa-circle"></i>
+                        <i class="far fa-building"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Divisi</h4>
+                            <h4>Total Divisi</h4>
                         </div>
                         <div class="card-body">
-                            47
+                            0
                         </div>
                     </div>
                 </div>
@@ -69,60 +69,60 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
-                    <div class="card-icon bg-primary">
+                    <div class="card-icon bg-dark">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Gaji</h4>
+                            <h4>Total Daftar Gaji</h4>
                         </div>
                         <div class="card-body">
-                            10
+                            0
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
-                    <div class="card-icon bg-danger">
-                        <i class="far fa-newspaper"></i>
+                    <div class="card-icon bg-info">
+                        <i class="fas fa-city"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Provinsi</h4>
+                            <h4>Total Provinsi</h4>
                         </div>
                         <div class="card-body">
-                            42
+                            0
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
-                    <div class="card-icon bg-warning">
-                        <i class="far fa-file"></i>
+                    <div class="card-icon" style="background: grey">
+                        <i class="fas fa-archway"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Kota/ <br> Kabupaten</h4>
+                            <h4>Total Kota & <br> Kabupaten</h4>
                         </div>
                         <div class="card-body">
-                            1,201
+                            0
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
-                    <div class="card-icon bg-success">
-                        <i class="fas fa-circle"></i>
+                    <div class="card-icon" style="background: darkgreen">
+                        <i class="fas fa-torii-gate"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Kecamatan</h4>
+                            <h4>Total Kecamatan</h4>
                         </div>
                         <div class="card-body">
-                            47
+                            0
                         </div>
                     </div>
                 </div>

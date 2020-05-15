@@ -9,32 +9,9 @@ $('.tombol-hapus').on('click', function (e) {
 		text: "data ini akan dihapus?",
 		type: 'warning',
 		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
+		confirmButtonColor: '#6B5ACC',
+		cancelButtonColor: '#FF0080',
 		confirmButtonText: 'Hapus Data!',
-		cancelButtonText: 'Batal'
-	}).then((result) => {
-		if (result.value) {
-			document.location.href = href;
-		}
-	})
-
-});
-
-// tombol-baca
-$('.tombol-baca').on('click', function (e) {
-
-	e.preventDefault();
-	const href = $(this).attr('href');
-
-	Swal({
-		title: 'Baca Pesan',
-		text: "tandai sudah dibaca?",
-		type: 'warning',
-		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		confirmButtonText: 'Baca',
 		cancelButtonText: 'Batal'
 	}).then((result) => {
 		if (result.value) {
@@ -55,32 +32,9 @@ $('.tombol-keluar').on('click', function (e) {
 		text: "ingin log out?",
 		type: 'warning',
 		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
+		confirmButtonColor: '#6B5ACC',
+		cancelButtonColor: '#FF0080',
 		confirmButtonText: 'Log Out!',
-		cancelButtonText: 'Batal'
-	}).then((result) => {
-		if (result.value) {
-			document.location.href = href;
-		}
-	})
-
-});
-
-// tombol-konfirmasi
-$('.tombol-konfirmasi').on('click', function (e) {
-
-	e.preventDefault();
-	const href = $(this).attr('href');
-
-	Swal({
-		title: 'Konfirmasi Pembayaran',
-		text: "yakin ingin konfirmasi pembayaran?",
-		type: 'warning',
-		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		confirmButtonText: 'Konfirmasi',
 		cancelButtonText: 'Batal'
 	}).then((result) => {
 		if (result.value) {

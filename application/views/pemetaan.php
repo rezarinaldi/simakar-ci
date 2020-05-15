@@ -2,10 +2,15 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Pemetaan</h1>
+            <h1><?= $title ?></h1>
         </div>
 
         <div class="section-body">
+            <h2 class="section-title">Aturan</h2>
+            <p class="section-lead">
+                Disini Anda dapat melihat lokasi rumah karyawan.
+            </p>
+
             <div class="row">
                 <div class="col-12">
                     <div class="card">
