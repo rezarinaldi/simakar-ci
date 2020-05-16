@@ -1,14 +1,14 @@
         <div class="main-sidebar">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-                    <a href="<?= base_url('dashboard') ?>"><img src="<?= base_url('') ?>/assets/img/employee.svg" height="45" width="45" alt=""> simakar</a>
+                    <a href="<?= base_url('beranda') ?>"><img src="<?= base_url('') ?>/assets/img/employee.svg" height="45" width="45" alt=""> simakar</a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
-                    <a href="<?= base_url('dashboard') ?>"><img src="<?= base_url('') ?>/assets/img/employee.svg" height="45" width="45" alt=""></a>
+                    <a href="<?= base_url('beranda') ?>"><img src="<?= base_url('') ?>/assets/img/employee.svg" height="45" width="45" alt=""></a>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">Beranda</li>
-                    <li><a class="nav-link" href="<?= base_url('dashboard') ?>"><i class="fas fa-laptop-code"></i><span>Beranda</span></a></li>
+                    <li><a class="nav-link" href="<?= base_url('beranda') ?>"><i class="fas fa-laptop-code"></i><span>Beranda</span></a></li>
                     <li class="menu-header">Peta</li>
                     <li><a class="nav-link" href="<?= base_url('pemetaan') ?>"><i class="fas fa-map-marker-alt"></i><span>Pemetaan</span></a></li>
                     <li class="menu-header">Manajemen</li>
@@ -26,6 +26,8 @@
                     </li>
                     <li><a class="nav-link" href="<?= base_url('karyawan/laporan') ?>"><i class="far fa-file-alt"></i><span>Laporan</span></a></li>
                     <li><a class="nav-link" href="<?= base_url('admins') ?>"><i class="fas fa-user-astronaut"></i><span>Admin</span></a></li>
+                    <li class="menu-header">Tentang</li>
+                    <li><a class="nav-link" href="<?= base_url('tentang') ?>"><i class="fas fa-rocket"></i><span>Tentang</span></a></li>
                 </ul>
             </aside>
         </div>

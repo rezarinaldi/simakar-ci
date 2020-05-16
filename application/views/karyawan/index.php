@@ -18,14 +18,44 @@
                     <div class="card-header">
                         <h4>Data Karyawan</h4>
                         <div class="card-header-form">
-                            <a href="javascript:;" class="btn btn-icon btn-dark"><i class="fas fa-plus-circle"></i> Tambah Data</a>
-                            <!-- <a href="javascript:;" target="_blank" class="btn btn-icon icon-left btn-success"><i class="fas fa-print"></i> Cetak</a> -->
+                            <a href="<?= base_url('karyawan/tambah') ?>" class="btn btn-icon btn-dark"><i class="fas fa-plus-circle"></i> Tambah Data</a>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover table-md" id="mytable">
-                                
+                            <thead>
+                                    <tr align="center">
+                                        <th>No</th>
+                                        <th>Gambar</th>
+                                        <th>Nama</th>
+                                        <th>Jabatan</th>
+                                        <th>Divisi</th>
+                                        <th>Tanggal Masuk</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    ?>
+                                    <tr align="center">
+                                        <td><?= $no++ ?></td>
+                                        <td>
+
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <a href="<?= base_url('karyawan/profil') ?>" class="btn btn-sm btn-primary"><i class="fas fa-search-plus"></i> Profil</a>
+                                            <a href="<?= base_url('karyawan/ubah/') ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
+                                            <a href="<?= base_url('karyawan/hapus/') ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i> Hapus</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
                             </table>
                         </div>
                     </div>

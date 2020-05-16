@@ -25,6 +25,7 @@
                         <img src="<?= base_url() ?>/assets/img/employee.svg" alt="logo" width="80" class="mb-5 mt-2">
                         <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Simakar</span></h4>
                         <p class="text-muted">Before you get started, you must login or register if you don't already have an account.</p>
+                        
                         <form method="POST" action="javascript:;" class="needs-validation" novalidate="">
 
                             <div class="form-group">
@@ -67,7 +68,7 @@
 
                         </form>
 
-                        <div class="text-center mt-5">
+                        <div class="text-center" style="margin-top: 42px">
                             Copyright &copy; Simakar <script>
                                 document.write(new Date().getFullYear());
                             </script> <br> Made with 💜 by <a href="https://github.com/stisla/stisla">Stisla</a>

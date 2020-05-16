@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Bulan Mei 2020 pada 09.49
+-- Waktu pembuatan: 15 Bulan Mei 2020 pada 22.18
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -90,7 +90,7 @@ CREATE TABLE `karyawan` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `no_hp` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` int(10) UNSIGNED NOT NULL,
+  `gender` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_masuk` date NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `id_jabatan` int(10) UNSIGNED NOT NULL,
@@ -103,6 +103,7 @@ CREATE TABLE `karyawan` (
   `gambar` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `latitude` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `longitude` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ket` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL

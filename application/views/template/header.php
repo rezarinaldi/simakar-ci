@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no" name="viewport">
     <title><?= $title ?></title>
 
     <!-- General CSS Files -->
@@ -14,6 +14,10 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/components.css">
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 
 </head>
 
@@ -27,20 +31,20 @@
                         <li><a href="javascript:;" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
                     </ul>
                     <div class="search-element">
-                        <h4 class="text-white">Sistem Manajemen Karyawan di PT. CobaCoding</h4>
+                        <h4 class="text-white">Sistem Manajemen Karyawan di PT. Coba Coding</h4>
                     </div>
                 </form>
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="<?= base_url() ?>/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, </div>
+                            <div class="d-sm-none d-lg-inline-block">Hi, Admin</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:;" class="dropdown-item has-icon">
+                            <a href="<?= base_url('admins/profil') ?>" class="dropdown-item has-icon">
                                 <i class="far fa-user"></i> Profil
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="javascript:;" class="dropdown-item has-icon text-danger tombol-keluar">
+                            <a href="<?= base_url('auth/logout') ?>" class="dropdown-item has-icon text-danger tombol-keluar">
                                 <i class="fas fa-sign-out-alt"></i> Log Out
                             </a>
                         </div>

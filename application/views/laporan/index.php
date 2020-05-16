@@ -8,7 +8,7 @@
         <div class="section-body">
             <h2 class="section-title">Aturan</h2>
             <p class="section-lead">
-                Disini Anda dapat melihat data laporan karyawan.
+                Pastikan Anda mengisi data dengan benar, agar tidak terjadi kesalahan.
             </p>
         </div>
 
@@ -17,13 +17,42 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Form Laporan Karyawan</h4>
-                        <div class="card-header-form">
-                            <!-- <a href="javascript:;" target="_blank" class="btn btn-icon icon-left btn-success"><i class="fas fa-print"></i> Cetak</a> -->
-                        </div>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
-
+                        <form action="<?= base_url() ?>karyawan/laporan" method="post">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Dari Tanggal</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="fas fa-calendar"></i>
+                                                </div>
+                                            </div>
+                                            <input type="date" name="dari" class="form-control">
+                                        </div>
+                                        <?= form_error('dari', '<div class="text-small text-danger">', '</div>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sampai Tanggal</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="fas fa-calendar"></i>
+                                                </div>
+                                            </div>
+                                            <input type="date" name="sampai" class="form-control">
+                                        </div>
+                                        <?= form_error('sampai', '<div class="text-small text-danger">', '</div>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" name="cari" class="btn btn-primary">
+                                            <i class="fas fa-search"></i> Cari
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
