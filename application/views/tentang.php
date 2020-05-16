@@ -21,7 +21,7 @@
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 <div class="card-footer bg-whitesmoke font-weight-bold">
-                    Ttd, M. Nuruddin Ismail (23) & Reza Rinaldi (27) <div class="bullet"></div> Kelas TI-2D
+                    Akhukum fillah: M. Nuruddin Ismail (23) & Reza Rinaldi (27) <div class="bullet"></div> Kelas TI-2D
                 </div>
             </div>
         </div>

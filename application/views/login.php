@@ -25,8 +25,8 @@
                         <img src="<?= base_url() ?>/assets/img/employee.svg" alt="logo" width="80" class="mb-5 mt-2">
                         <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Simakar</span></h4>
                         <p class="text-muted">Before you get started, you must login or register if you don't already have an account.</p>
-                        
-                        <form method="POST" action="javascript:;" class="needs-validation" novalidate="">
+
+                        <form method="POST" action="<?= base_url('auth/proses') ?>" autocomplete="off" class="needs-validation" novalidate="">
 
                             <div class="form-group">
                                 <label for="email">Email</label>

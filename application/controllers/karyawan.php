@@ -24,7 +24,27 @@ class karyawan extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function tambah_simpan()
+    {
+        $data['title'] = 'Karyawan';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('karyawan/tambah', $data);
+        $this->load->view('template/footer');
+    }
+
     public function ubah()
+    {
+        $data['title'] = 'Karyawan';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar', $data);
+        $this->load->view('karyawan/ubah', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function ubah_simpan()
     {
         $data['title'] = 'Karyawan';
 

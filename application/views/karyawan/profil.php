@@ -21,44 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-12 col-lg-7">
-                    <div class="card">
-                        <form method="post" class="needs-validation" novalidate="">
-                            <div class="card-header">
-                                <h4>Ubah Profil</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="form-group col-md-6 col-12">
-                                        <label>Nama</label>
-                                        <input type="text" class="form-control" value="Admin" required="">
-                                        <div class="invalid-feedback">
-                                            Please fill in the nama
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6 col-12">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" value="admin@admin.com" required="">
-                                        <div class="invalid-feedback">
-                                            Please fill in the email
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6 col-12">
-                                        <label>Password</label>
-                                        <input type="password" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-6 col-12">
-                                        <label>Konfirmasi Password</label>
-                                        <input type="password" class="form-control">
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>

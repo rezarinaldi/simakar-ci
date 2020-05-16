@@ -27,7 +27,7 @@
     </section>
 </div>
 
-<!-- leafet pemeteaan -->
+<!-- leaflet pemeteaan -->
 <script>
     var mymap = L.map('mapid').setView([-7.946263, 112.615548], 14);
 
@@ -37,4 +37,9 @@
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox/streets-v11',
     }).addTo(mymap);
+
+    var icon_rumah = L.icon({
+        iconUrl: '<?= base_url('assets/img/lokasi.png') ?>',
+        iconSize: [35, 45], // size of the icon
+    });
 </script>
