@@ -25,7 +25,6 @@
                         </ul>
                     </li>
                     <li class="nav-item" id="navlaporan"><a class="nav-link" href="<?= base_url('menu/laporan') ?>"><i class="far fa-file-alt"></i><span>Laporan</span></a></li>
-                    <li class="nav-item" id="navadmins"><a class="nav-link" href="<?= base_url('menu/admins') ?>"><i class="fas fa-user-astronaut"></i><span>Admin</span></a></li>
                     <li class="menu-header">Tentang</li>
                     <li class="nav-item" id="navtentang"><a class="nav-link" href="<?= base_url('menu/tentang') ?>"><i class="fas fa-rocket"></i><span>Tentang</span></a></li>
                 </ul>

@@ -63,16 +63,6 @@ class menu extends CI_Controller
         $this->load->view('template/footer');
     }
 
-	public function admins()
-	{
-		$data['title'] = 'Admin';
-
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar', $data);
-        $this->load->view('admin/index', $data);
-        $this->load->view('template/footer');
-	}
-
 	public function tentang()
 	{
 		$data['title'] = 'Tentang';
