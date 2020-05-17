@@ -7,7 +7,7 @@
     <title><?= $title ?></title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/employee.svg">
 
@@ -46,10 +46,10 @@
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="<?= base_url() ?>/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, Admin</div>
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?= $this->session->userdata('nama') ?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:;" id="swal-6" class="dropdown-item has-icon text-danger">
+                            <a href="<?= base_url('auth/logout') ?>" id="keluar" class="dropdown-item has-icon text-danger">
                                 <i class="fas fa-sign-out-alt"></i> Log Out
                             </a>
                         </div>

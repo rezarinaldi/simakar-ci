@@ -48,7 +48,7 @@
                                         <td></td>
                                         <td>
                                             <a href="<?= base_url('kt_kb/ubah/') ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
-                                            <a href="<?= base_url('kt_kb/hapus/') ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="far fa-trash-alt"></i> Hapus</a>
+                                            <a href="<?= base_url('kt_kb/hapus/') ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
                                         </td>
                                     </tr>
 

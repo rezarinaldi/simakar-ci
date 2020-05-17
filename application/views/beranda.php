@@ -8,21 +8,6 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
-                        <i class="fas fa-user-astronaut"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Total Admin</h4>
-                        </div>
-                        <div class="card-body">
-                            0
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-danger">
                         <i class="far fa-user"></i>
                     </div>
                     <div class="card-wrap">
@@ -65,8 +50,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-dark">
@@ -82,6 +65,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-info">
@@ -130,31 +115,13 @@
             <div class="col-12 mb-4">
                 <div class="hero text-white hero-bg-image hero-bg-parallax" data-background="<?= base_url() ?>/assets/img/unsplash/photo-1478774519940-123bd0ab1e0b.jpg">
                     <div class="hero-inner">
-                        <h2>Hi, Admin!</h2>
+                        <h2>Hi, <?= $this->session->userdata('nama') ?>!</h2>
                         <p class="lead">Selamat datang kembali.</p>
-                        <div class="mt-4">
-                            <a href="<?= base_url('admins/profil') ?>" class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-user"></i> Profil</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <!-- <div class="col-lg-8 col-md-12 col-12 col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Statistiks Karyawan</h4>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="myChart"></canvas>
-                        <div class="statistic-details">
-                            <div class="statistic-details-item">
-                                <canvas id="karyawan"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-header">

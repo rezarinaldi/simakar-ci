@@ -1,5 +1,47 @@
 "use strict";
 
+// keluar
+
+$("#keluar").on("click", function (e) {
+	e.preventDefault();
+	const href = $(this).attr("href");
+
+	swal({
+		title: "Apakah Anda yakin?",
+		text: "ingin log out?",
+		icon: "warning",
+		buttons: [true, "Log Out!"],
+		dangerMode: true,
+	}).then((willDelete) => {
+		if (willDelete) {
+			document.location.href = href;
+		} else {
+			swal("Dibatalkan", "Anda telah membatalkan log out.", "info");
+		}
+	});
+});
+
+// hapus
+
+$("#hapus").on("click", function (e) {
+	e.preventDefault();
+	const href = $(this).attr("href");
+
+	swal({
+		title: "Apakah Anda yakin?",
+		text: "ingin mengahapus data ini?",
+		icon: "warning",
+		buttons: [true, "Hapus Data!"],
+		dangerMode: true,
+	}).then((willDelete) => {
+		if (willDelete) {
+			document.location.href = href;
+		} else {
+			swal("Dibatalkan", "Anda telah membatalkan penghapusan data.", "info");
+		}
+	});
+});
+
 $("#swal-1").click(function () {
 	swal("Hello");
 });
@@ -20,9 +62,9 @@ $("#swal-5").click(function () {
 	swal("Good Job", "You clicked the button!", "error");
 });
 
-$("#swal-6").click(function () {
+$("#swal-0").click(function () {
 	swal({
-		title: "Are you sure?",
+		title: "Apakah Anda yakin?",
 		text: "Once deleted, you will not be able to recover this imaginary file!",
 		icon: "warning",
 		buttons: true,
@@ -57,47 +99,5 @@ $("#swal-8").click(function () {
 	swal("This modal will disappear soon!", {
 		buttons: false,
 		timer: 3000,
-	});
-});
-
-// tombol-hapus
-$(".tombol-hapus").on("click", function (e) {
-	e.preventDefault();
-	const href = $(this).attr("href");
-
-	Swal({
-		title: "Apakah anda yakin",
-		text: "data ini akan dihapus?",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: "#6B5ACC",
-		cancelButtonColor: "#FF0080",
-		confirmButtonText: "Hapus Data!",
-		cancelButtonText: "Batal",
-	}).then((result) => {
-		if (result.value) {
-			document.location.href = href;
-		}
-	});
-});
-
-// tombol-keluar
-$(".tombol-keluar").on("click", function (e) {
-	e.preventDefault();
-	const href = $(this).attr("href");
-
-	Swal({
-		title: "Apakah anda yakin",
-		text: "ingin log out?",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: "#6B5ACC",
-		cancelButtonColor: "#FF0080",
-		confirmButtonText: "Log Out!",
-		cancelButtonText: "Batal",
-	}).then((result) => {
-		if (result.value) {
-			document.location.href = href;
-		}
 	});
 });

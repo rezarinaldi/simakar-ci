@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Bulan Mei 2020 pada 22.18
+-- Waktu pembuatan: 17 Bulan Mei 2020 pada 12.56
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -21,23 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `simakar`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `admins`
---
-
-CREATE TABLE `admins` (
-  `id_admins` int(10) UNSIGNED NOT NULL,
-  `nama` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -154,13 +137,6 @@ CREATE TABLE `provinsi` (
 --
 
 --
--- Indeks untuk tabel `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id_admins`),
-  ADD UNIQUE KEY `admins_email_unique` (`email`);
-
---
 -- Indeks untuk tabel `divisi`
 --
 ALTER TABLE `divisi`
@@ -211,12 +187,6 @@ ALTER TABLE `provinsi`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
-
---
--- AUTO_INCREMENT untuk tabel `admins`
---
-ALTER TABLE `admins`
-  MODIFY `id_admins` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `divisi`

@@ -7,7 +7,7 @@
     <title><?= $title ?></title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/employee.svg">
 
@@ -29,19 +29,21 @@
                         <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Simakar</span></h4>
                         <p class="text-muted">Before you get started, you must login or register if you don't already have an account.</p>
 
-                        <form method="POST" action="<?= base_url('auth/proses') ?>" autocomplete="off" class="needs-validation" novalidate="">
+                        <?= $this->session->flashdata('pesan') ?>
+
+                        <form method="POST" action="<?= base_url('auth/proses') ?>" id="loginform" autocomplete="off" class="needs-validation" novalidate="">
 
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="username">Username</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            @
+                                            <i class="far fa-user"></i>
                                         </div>
                                     </div>
-                                    <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                    <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
                                     <div class="invalid-feedback">
-                                        Email Masih Kosong
+                                        Username Masih Kosong
                                     </div>
                                 </div>
                             </div>
