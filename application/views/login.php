@@ -7,9 +7,12 @@
     <title><?= $title ?></title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/employee.svg">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/bootstrap-social/bootstrap-social.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/style.css">
@@ -91,10 +94,10 @@
     </div>
 
     <!-- General JS Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="<?= base_url() ?>/assets/modules/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/assets/modules/popper.js"></script>
+    <script src="<?= base_url() ?>/assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="<?= base_url() ?>/assets/modules/moment.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/stisla.js"></script>
 
     <script src="<?= base_url() ?>/assets/js/bootstrap.min.js"></script>

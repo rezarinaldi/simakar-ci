@@ -140,7 +140,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+            <!-- <div class="col-lg-8 col-md-12 col-12 col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <h4>Statistiks Karyawan</h4>
@@ -152,6 +152,16 @@
                                 <canvas id="karyawan"></canvas>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Statistiks Karyawan</h4>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myChart" height="158"></canvas>
                     </div>
                 </div>
             </div>
@@ -196,7 +206,7 @@
                             </li>
                         </ul>
                         <div class="text-center pt-1 pb-1">
-                            <a href="javascript:;" class="btn btn-primary btn-lg btn-round">
+                            <a href="<?= base_url('karyawan')?>" class="btn btn-primary btn-lg btn-round">
                                 View All
                             </a>
                         </div>

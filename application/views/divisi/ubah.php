@@ -20,7 +20,17 @@
                     </div>
                     <div class="card-body">
                         <form action="" method="post">
-
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Nama Divisi</label>
+                                        <input type="text" name="nama_divisi" value="<?= set_value('nama_divisi') ?>" class="form-control">
+                                        <?= form_error('nama_divisi', '<div class="text-small text-danger">', '</div>') ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2 btnSubmit"><i class="fas fa-save"></i> Simpan</button>
+                            <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
                         </form>
                     </div>
                 </div>

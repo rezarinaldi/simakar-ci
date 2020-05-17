@@ -20,7 +20,22 @@
                     </div>
                     <div class="card-body">
                         <form action="" method="post">
-
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Nama Kota / Kabupaten</label>
+                                        <input type="text" name="nama_kt_kb" value="<?= set_value('nama_kt_kb') ?>" class="form-control">
+                                        <?= form_error('nama_kt_kb', '<div class="text-small text-danger">', '</div>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kode Pos</label>
+                                        <input type="number" name="kode_pos" value="<?= set_value('kode_pos') ?>" class="form-control">
+                                        <?= form_error('kode_pos', '<div class="text-small text-danger">', '</div>') ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2 btnSubmit"><i class="fas fa-save"></i> Simpan</button>
+                            <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
                         </form>
                     </div>
                 </div>

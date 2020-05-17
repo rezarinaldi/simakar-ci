@@ -7,16 +7,22 @@
     <title><?= $title ?></title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/employee.svg">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/summernote/summernote-bs4.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/components.css">
 
     <!-- datatables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
 
     <!-- leaflet -->
     <link rel=" stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
@@ -47,7 +53,7 @@
                                 <i class="far fa-user"></i> Profil
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="<?= base_url('auth/logout') ?>" class="dropdown-item has-icon text-danger tombol-keluar">
+                            <a href="javascript:;" id="swal-6" class="dropdown-item has-icon text-danger">
                                 <i class="fas fa-sign-out-alt"></i> Log Out
                             </a>
                         </div>
