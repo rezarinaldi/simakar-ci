@@ -20,7 +20,7 @@
                         <h4>Form Laporan Karyawan</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url() ?>karyawan/laporan" method="post">
+                        <form action="<?= base_url() ?>menu/laporan" method="post">
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">

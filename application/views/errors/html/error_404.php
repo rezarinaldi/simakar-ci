@@ -38,7 +38,7 @@ $CI->load->helper('url');
 						</div>
 						<div class="page-search">
 							<div class="mt-5">
-								<a href="<?= base_url('beranda'); ?>" class="btn btn-dark"><i class="fas fa-meteor"></i> Kembali ke Beranda</a>
+								<a href="<?= base_url('menu'); ?>" class="btn btn-dark"><i class="fas fa-meteor"></i> Kembali ke Beranda</a>
 							</div>
 						</div>
 					</div>

@@ -36,7 +36,6 @@ class kecamatan extends CI_Controller
 
     public function hapus()
     {
-        
     }
 }
 

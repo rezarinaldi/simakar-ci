@@ -13,7 +13,7 @@ class jabatan extends CI_Controller
         $this->load->view('jabatan/index', $data);
         $this->load->view('template/footer');
     }
-    
+
     public function tambah()
     {
         $data['title'] = 'Jabatan';
@@ -36,7 +36,6 @@ class jabatan extends CI_Controller
 
     public function hapus()
     {
-        
     }
 }
 

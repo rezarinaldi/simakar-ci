@@ -36,7 +36,6 @@ class provinsi extends CI_Controller
 
     public function hapus()
     {
-        
     }
 }
 

@@ -36,7 +36,6 @@ class kt_kb extends CI_Controller
 
     public function hapus()
     {
-        
     }
 }
 
