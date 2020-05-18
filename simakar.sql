@@ -1,251 +1,188 @@
--- phpMyAdmin SQL Dump
--- version 4.9.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2020 pada 12.56
--- Versi server: 10.4.8-MariaDB
--- Versi PHP: 7.3.10
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+Source Server         : localhost_3306
+Source Server Version : 50505
+Source Host           : localhost:3306
+Source Database       : simakar
 
+Target Server Type    : MYSQL
+Target Server Version : 50505
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+Date: 2020-05-18 20:05:27
+*/
 
---
--- Database: `simakar`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Table structure for `admins`
+-- ----------------------------
+DROP TABLE IF EXISTS `admins`;
+CREATE TABLE `admins` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `admins_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Struktur dari tabel `divisi`
---
+-- ----------------------------
+-- Records of admins
+-- ----------------------------
 
+-- ----------------------------
+-- Table structure for `divisi`
+-- ----------------------------
+DROP TABLE IF EXISTS `divisi`;
 CREATE TABLE `divisi` (
-  `id_divisi` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nama_divisi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of divisi
+-- ----------------------------
+INSERT INTO `divisi` VALUES ('1', 'manajerial', '2020-05-17 21:54:15', '2020-05-17 22:12:39');
 
---
--- Struktur dari tabel `gaji`
---
-
+-- ----------------------------
+-- Table structure for `gaji`
+-- ----------------------------
+DROP TABLE IF EXISTS `gaji`;
 CREATE TABLE `gaji` (
-  `id_gaji` int(10) UNSIGNED NOT NULL,
-  `jumlah_gaji` double(12,2) NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `jumlah_gaji` int(12) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of gaji
+-- ----------------------------
+INSERT INTO `gaji` VALUES ('1', '30000', '2020-05-18 10:12:53', '2020-05-18 12:01:05');
+INSERT INTO `gaji` VALUES ('2', '30000', '2020-05-18 12:00:00', '2020-05-18 12:00:00');
 
---
--- Struktur dari tabel `jabatan`
---
-
+-- ----------------------------
+-- Table structure for `jabatan`
+-- ----------------------------
+DROP TABLE IF EXISTS `jabatan`;
 CREATE TABLE `jabatan` (
-  `id_jabatan` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nama_jabatan` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of jabatan
+-- ----------------------------
+INSERT INTO `jabatan` VALUES ('1', 'santi cazorla', '2020-05-17 21:34:22', '2020-05-17 21:34:22');
+INSERT INTO `jabatan` VALUES ('3', 'direktur', null, null);
 
---
--- Struktur dari tabel `karyawan`
---
-
+-- ----------------------------
+-- Table structure for `karyawan`
+-- ----------------------------
+DROP TABLE IF EXISTS `karyawan`;
 CREATE TABLE `karyawan` (
-  `id_karyawan` int(10) UNSIGNED NOT NULL,
-  `karyawan` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `no_hp` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('pria','wanita') COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_masuk` date NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `id_jabatan` int(10) UNSIGNED NOT NULL,
-  `id_provinsi` int(10) UNSIGNED NOT NULL,
-  `id_kecamatan` int(10) UNSIGNED NOT NULL,
-  `id_kt_kb` int(10) UNSIGNED NOT NULL,
-  `id_divisi` int(10) UNSIGNED NOT NULL,
-  `id_gaji` int(10) UNSIGNED NOT NULL,
+  `id_jabatan` int(10) unsigned NOT NULL,
+  `id_provinsi` int(10) unsigned NOT NULL,
+  `id_kecamatan` int(10) unsigned NOT NULL,
+  `id_kt_kb` int(10) unsigned NOT NULL,
+  `id_divisi` int(10) unsigned NOT NULL,
+  `id_gaji` int(10) unsigned NOT NULL,
   `umur` int(11) NOT NULL,
-  `gambar` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `latitude` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `longitude` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ket` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ket` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id`),
+  KEY `fkKtKb` (`id_kt_kb`),
+  KEY `fkProvinsi` (`id_provinsi`),
+  KEY `fkJabatan` (`id_jabatan`),
+  KEY `fkDivisi` (`id_divisi`),
+  KEY `fkGaji` (`id_gaji`),
+  KEY `fkKecamatan` (`id_kecamatan`),
+  CONSTRAINT `fkDivisi` FOREIGN KEY (`id_divisi`) REFERENCES `divisi` (`id`),
+  CONSTRAINT `fkGaji` FOREIGN KEY (`id_gaji`) REFERENCES `gaji` (`id`),
+  CONSTRAINT `fkJabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id`),
+  CONSTRAINT `fkKecamatan` FOREIGN KEY (`id_kecamatan`) REFERENCES `kecamatan` (`id`),
+  CONSTRAINT `fkKtKb` FOREIGN KEY (`id_kt_kb`) REFERENCES `kt_kb` (`id`),
+  CONSTRAINT `fkProvinsi` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of karyawan
+-- ----------------------------
+INSERT INTO `karyawan` VALUES ('3', 'masbro', 'masbro@email.com', '08762738281', 'jl Kalimas', 'pria', '2020-08-10', '1999-06-12', '1', '1', '1', '1', '1', '1', '22', 'default.jpg', null, null, null, '2020-05-18 13:50:42', '2020-05-18 13:50:42');
 
---
--- Struktur dari tabel `kecamatan`
---
-
+-- ----------------------------
+-- Table structure for `kecamatan`
+-- ----------------------------
+DROP TABLE IF EXISTS `kecamatan`;
 CREATE TABLE `kecamatan` (
-  `id_kecamatan` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nama_kecamatan` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of kecamatan
+-- ----------------------------
+INSERT INTO `kecamatan` VALUES ('1', 'kademangan', '2020-05-18 10:28:28', '2020-05-18 10:28:28');
 
---
--- Struktur dari tabel `kt_kb`
---
-
+-- ----------------------------
+-- Table structure for `kt_kb`
+-- ----------------------------
+DROP TABLE IF EXISTS `kt_kb`;
 CREATE TABLE `kt_kb` (
-  `id_kt_kb` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nama_kt_kb` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kode_pos` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of kt_kb
+-- ----------------------------
+INSERT INTO `kt_kb` VALUES ('1', 'Kota Probolinggo ', '17823', '2020-05-18 10:16:00', '2020-05-18 10:16:00');
 
---
--- Struktur dari tabel `provinsi`
---
-
+-- ----------------------------
+-- Table structure for `provinsi`
+-- ----------------------------
+DROP TABLE IF EXISTS `provinsi`;
 CREATE TABLE `provinsi` (
-  `id_provinsi` int(10) UNSIGNED NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nama_provinsi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Indexes for dumped tables
---
-
---
--- Indeks untuk tabel `divisi`
---
-ALTER TABLE `divisi`
-  ADD PRIMARY KEY (`id_divisi`);
-
---
--- Indeks untuk tabel `gaji`
---
-ALTER TABLE `gaji`
-  ADD PRIMARY KEY (`id_gaji`);
-
---
--- Indeks untuk tabel `jabatan`
---
-ALTER TABLE `jabatan`
-  ADD PRIMARY KEY (`id_jabatan`);
-
---
--- Indeks untuk tabel `karyawan`
---
-ALTER TABLE `karyawan`
-  ADD PRIMARY KEY (`id_karyawan`),
-  ADD KEY `fkKtKb` (`id_kt_kb`),
-  ADD KEY `fkProvinsi` (`id_provinsi`),
-  ADD KEY `fkJabatan` (`id_jabatan`),
-  ADD KEY `fkDivisi` (`id_divisi`),
-  ADD KEY `fkGaji` (`id_gaji`),
-  ADD KEY `fkKecamatan` (`id_kecamatan`);
-
---
--- Indeks untuk tabel `kecamatan`
---
-ALTER TABLE `kecamatan`
-  ADD PRIMARY KEY (`id_kecamatan`);
-
---
--- Indeks untuk tabel `kt_kb`
---
-ALTER TABLE `kt_kb`
-  ADD PRIMARY KEY (`id_kt_kb`);
-
---
--- Indeks untuk tabel `provinsi`
---
-ALTER TABLE `provinsi`
-  ADD PRIMARY KEY (`id_provinsi`);
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
---
-
---
--- AUTO_INCREMENT untuk tabel `divisi`
---
-ALTER TABLE `divisi`
-  MODIFY `id_divisi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `gaji`
---
-ALTER TABLE `gaji`
-  MODIFY `id_gaji` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `jabatan`
---
-ALTER TABLE `jabatan`
-  MODIFY `id_jabatan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `karyawan`
---
-ALTER TABLE `karyawan`
-  MODIFY `id_karyawan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `kecamatan`
---
-ALTER TABLE `kecamatan`
-  MODIFY `id_kecamatan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `kt_kb`
---
-ALTER TABLE `kt_kb`
-  MODIFY `id_kt_kb` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `provinsi`
---
-ALTER TABLE `provinsi`
-  MODIFY `id_provinsi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `karyawan`
---
-ALTER TABLE `karyawan`
-  ADD CONSTRAINT `fkDivisi` FOREIGN KEY (`id_divisi`) REFERENCES `divisi` (`id_divisi`),
-  ADD CONSTRAINT `fkGaji` FOREIGN KEY (`id_gaji`) REFERENCES `gaji` (`id_gaji`),
-  ADD CONSTRAINT `fkJabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`),
-  ADD CONSTRAINT `fkKecamatan` FOREIGN KEY (`id_kecamatan`) REFERENCES `kecamatan` (`id_kecamatan`),
-  ADD CONSTRAINT `fkKtKb` FOREIGN KEY (`id_kt_kb`) REFERENCES `kt_kb` (`id_kt_kb`),
-  ADD CONSTRAINT `fkProvinsi` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id_provinsi`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of provinsi
+-- ----------------------------
+INSERT INTO `provinsi` VALUES ('1', 'jawa timur', '2020-05-18 10:14:39', '2020-05-18 10:14:39');
