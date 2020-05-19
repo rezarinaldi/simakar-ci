@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/employee.svg">
 
     <!-- CSS Libraries -->
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/izitoast/css/iziToast.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css">
 

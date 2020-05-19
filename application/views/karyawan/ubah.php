@@ -27,14 +27,27 @@
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria">
-                                    <label class="custom-control-label" for="Pria">Pria</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita">
-                                    <label class="custom-control-label" for="Wanita">Wanita</label>
-                                </div>
+
+                                <!-- <?php if (condition) : ?> -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria">
+                                        <label class="custom-control-label" for="Pria">Pria</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita">
+                                        <label class="custom-control-label" for="Wanita">Wanita</label>
+                                    </div>
+                                <!-- <?php else : ?> -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria">
+                                        <label class="custom-control-label" for="Pria">Pria</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita">
+                                        <label class="custom-control-label" for="Wanita">Wanita</label>
+                                    </div>
+                                <!-- <?php endif; ?> -->
+
                                 <?= form_error('gender', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
                             <div class="form-group">

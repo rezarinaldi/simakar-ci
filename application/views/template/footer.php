@@ -20,13 +20,11 @@
 <script src="<?= base_url() ?>/assets/js/stisla.js"></script>
 
 <!-- JS Libraies -->
+<script src="<?= base_url() ?>/assets/modules/izitoast/js/iziToast.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>/assets/modules/jquery.sparkline.min.js"></script>
 <script src="<?= base_url() ?>/assets/modules/chart.min.js"></script>
 <script src="<?= base_url() ?>/assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
 <script src="<?= base_url() ?>/assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-
-<!-- Page Specific JS File -->
-<script src="<?= base_url() ?>/assets/js/page/modules-chartjs.js"></script>
 
 <!-- Sweetalert JS -->
 <script src="<?= base_url(); ?>/assets/js/myscript.js"></script>

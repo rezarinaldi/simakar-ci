@@ -7,6 +7,7 @@ class gaji extends CI_Controller
     public function index()
     {
         $data['title'] = 'Gaji';
+        $data['gaji'] = $this->gaji_m->getAll();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);

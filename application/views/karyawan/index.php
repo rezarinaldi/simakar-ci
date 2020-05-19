@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover table-md" id="mytable">
-                            <thead>
+                                <thead>
                                     <tr align="center">
                                         <th>No</th>
                                         <th>Gambar</th>
@@ -38,23 +38,25 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    ?>
-                                    <tr align="center">
-                                        <td><?= $no++ ?></td>
-                                        <td>
-
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <a href="<?= base_url('karyawan/profil') ?>" class="btn btn-sm btn-primary"><i class="fas fa-search-plus"></i> Profil</a>
-                                            <a href="<?= base_url('karyawan/ubah/') ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
-                                            <a href="<?= base_url('karyawan/hapus/') ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
-                                        </td>
-                                    </tr>
-
+                                    foreach ($karyawan as $kw) : ?>
+                                        <tr align="center">
+                                            <td><?= $no++ ?></td>
+                                            <td>
+                                                <a href="<?= base_url() . 'assets/upload/' . $kw['gambar'] ?>">
+                                                    <img width="35px" height="35px" src="<?= base_url() . 'assets/upload/' . $kw['gambar'] ?>">
+                                                </a>
+                                            </td>
+                                            <td><?= $kw['nama'] ?></td>
+                                            <td><?= $kw['id_jabatan'] ?></td>
+                                            <td><?= $kw['id_divisi'] ?></td>
+                                            <td><?= $kw['tanggal_masuk'] ?></td>
+                                            <td>
+                                                <a href="<?= base_url('karyawan/profil/') . $kw['id'] ?>" class="btn btn-sm btn-primary"><i class="fas fa-search-plus"></i> Profil</a>
+                                                <a href="<?= base_url('karyawan/ubah/') . $kw['id'] ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
+                                                <a href="<?= base_url('karyawan/hapus/') . $kw['id'] ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

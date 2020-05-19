@@ -32,6 +32,7 @@ class menu extends CI_Controller
 	public function karyawan()
 	{
 		$data['title'] = 'Karyawan';
+		$data['karyawan'] = $this->karyawan_m->getAll();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
