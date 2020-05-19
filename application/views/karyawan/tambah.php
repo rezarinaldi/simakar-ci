@@ -30,15 +30,15 @@
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria">
+                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria" required="">
                                     <label class="custom-control-label" for="Pria">Pria</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita">
+                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita" required="">
                                     <label class="custom-control-label" for="Wanita">Wanita</label>
-                                </div>
-                                <div class="invalid-feedback">
-                                    Jenis kelamin tidak boleh kosong
+                                    <div class="invalid-feedback">
+                                        Jenis kelamin tidak boleh kosong
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
