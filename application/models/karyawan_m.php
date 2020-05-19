@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
@@ -15,7 +15,8 @@ class karyawan_m extends CI_Model
         ]);
     }
 
-    
+
 }
+
 
 /* End of file karyawan_m.php */
