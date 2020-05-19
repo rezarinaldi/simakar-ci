@@ -1,9 +1,20 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class karyawan_m extends CI_Model 
+use GuzzleHttp\Client;
+
+class karyawan_m extends CI_Model
 {
+    private $_client;
+
+    public function __construct()
+    {
+        $this->_client = new Client([
+            'base_uri' => 'http://localhost/simakar-ci/rest-server/public/karyawan'
+        ]);
+    }
+
     
 }
 
