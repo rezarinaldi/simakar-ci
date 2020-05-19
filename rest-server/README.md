@@ -7,40 +7,60 @@
 
 Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
 
-## END POINTNYA GAN
+# 🍁 END POINTNYA GAN
 
-### Akses CRUD
+## 🍂 Cara install:
+1. Run command `composer install`.
+2. Create database, type `simakar` and then import db [`simakar.sql`](../simakar.sql) without check forign key.
+3. Run command `cp .env.example .env` and then configure it on .env file.
+4. Run server `php -S localhost:8000 -t public`, **if using localhost: 8000**.
 
-    update,delete,detail : tambah parameter id diakhir endpoint "localhost:8000/karyawan/1"
+## 🍃 Akses CRUD:
+~ update, delete, detail: tambah parameter id diakhir endpoint `localhost:8000/karyawan/1` atau `localhost/simakar-ci/rest-server/public/karyawan/1`.
     
 
-### gaji
-    localhost:8000/gaji
+### 💸 gaji
 
-### karyawan
+    localhost:8000/gaji
+    atau
+    localhost/simakar-ci/rest-server/public/gaji
+
+### 👔 karyawan
 
     localhost:8000/karyawan
+    atau
+    localhost/simakar-ci/rest-server/public/karyawan
 
-### kota/kab
+### 🌇 kota atau kabupaten
 
     localhost:8000/kota
-
-### divisi
+    atau
+    localhost/simakar-ci/rest-server/public/kota
+    
+### 🏯 divisi
 
     localhost:8000/divisi
-
-### jabatan
+    atau
+    localhost/simakar-ci/rest-server/public/divisi
+    
+### 🗼 jabatan
 
     localhost:8000/jabatan
-
-### kecamatan
+    atau
+    localhost/simakar-ci/rest-server/public/jabatan
+    
+### ⛩️ kecamatan
 
     localhost:8000/kecamatan
-
-### provinsi
+    atau
+    localhost/simakar-ci/rest-server/public/kecamatan
+    
+### 🗾 provinsi
 
     localhost:8000/provinsi
-
+    atau
+    localhost/simakar-ci/rest-server/public/provinsi
+    
 ## Contributing
 
 Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).

@@ -16,7 +16,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Tambah Data Provinsi</h4>
+                        <h4>Form Tambah Data Provinsi</h4>
                     </div>
                     <div class="card-body">
                         <form action="" method="post">
@@ -24,7 +24,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Provinsi</label>
-                                        <input type="text" name="nama_provinsi" value="<?= set_value('nama_provinsi') ?>" class="form-control">
+                                        <input type="text" name="nama_provinsi" value="<?= set_value('nama_provinsi') ?>" class="form-control" autofocus>
                                         <?= form_error('nama_provinsi', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

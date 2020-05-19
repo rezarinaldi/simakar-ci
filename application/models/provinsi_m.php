@@ -2,10 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class jabatanModel extends CI_Model {
-
+class provinsi_m extends CI_Model 
+{
     
-
 }
 
-/* End of file jabatanModel.php */
+/* End of file provinsi_m.php */

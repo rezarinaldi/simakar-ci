@@ -2,10 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class gajiModel extends CI_Model {
-
+class kecamatan_m extends CI_Model 
+{
     
-
 }
 
-/* End of file gajiModel.php */
+/* End of file kecamatan_m.php */

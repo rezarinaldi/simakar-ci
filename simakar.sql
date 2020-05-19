@@ -16,27 +16,6 @@ Date: 2020-05-18 20:05:27
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `admins`
--- ----------------------------
-DROP TABLE IF EXISTS `admins`;
-CREATE TABLE `admins` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nama` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `admins_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------
--- Records of admins
--- ----------------------------
-
--- ----------------------------
 -- Table structure for `divisi`
 -- ----------------------------
 DROP TABLE IF EXISTS `divisi`;
@@ -51,7 +30,7 @@ CREATE TABLE `divisi` (
 -- ----------------------------
 -- Records of divisi
 -- ----------------------------
-INSERT INTO `divisi` VALUES ('1', 'manajerial', '2020-05-17 21:54:15', '2020-05-17 22:12:39');
+INSERT INTO `divisi` VALUES ('1', 'Manajerial', '2020-05-17 21:54:15', '2020-05-17 22:12:39');
 
 -- ----------------------------
 -- Table structure for `gaji`
@@ -68,8 +47,8 @@ CREATE TABLE `gaji` (
 -- ----------------------------
 -- Records of gaji
 -- ----------------------------
-INSERT INTO `gaji` VALUES ('1', '30000', '2020-05-18 10:12:53', '2020-05-18 12:01:05');
-INSERT INTO `gaji` VALUES ('2', '30000', '2020-05-18 12:00:00', '2020-05-18 12:00:00');
+INSERT INTO `gaji` VALUES ('1', '10000000', '2020-05-18 10:12:53', '2020-05-18 12:01:05');
+INSERT INTO `gaji` VALUES ('2', '8000000', '2020-05-18 12:00:00', '2020-05-18 12:00:00');
 
 -- ----------------------------
 -- Table structure for `jabatan`
@@ -81,13 +60,12 @@ CREATE TABLE `jabatan` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of jabatan
 -- ----------------------------
-INSERT INTO `jabatan` VALUES ('1', 'santi cazorla', '2020-05-17 21:34:22', '2020-05-17 21:34:22');
-INSERT INTO `jabatan` VALUES ('3', 'direktur', null, null);
+INSERT INTO `jabatan` VALUES ('1', 'Direktur', '2020-05-17 21:34:22', '2020-05-17 21:34:22');
 
 -- ----------------------------
 -- Table structure for `karyawan`
@@ -99,7 +77,7 @@ CREATE TABLE `karyawan` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `no_hp` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` enum('pria','wanita') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('Pria','Wanita') COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_masuk` date NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `id_jabatan` int(10) unsigned NOT NULL,
@@ -128,12 +106,12 @@ CREATE TABLE `karyawan` (
   CONSTRAINT `fkKecamatan` FOREIGN KEY (`id_kecamatan`) REFERENCES `kecamatan` (`id`),
   CONSTRAINT `fkKtKb` FOREIGN KEY (`id_kt_kb`) REFERENCES `kt_kb` (`id`),
   CONSTRAINT `fkProvinsi` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of karyawan
 -- ----------------------------
-INSERT INTO `karyawan` VALUES ('3', 'masbro', 'masbro@email.com', '08762738281', 'jl Kalimas', 'pria', '2020-08-10', '1999-06-12', '1', '1', '1', '1', '1', '1', '22', 'default.jpg', null, null, null, '2020-05-18 13:50:42', '2020-05-18 13:50:42');
+INSERT INTO `karyawan` VALUES ('1', 'Masbro', 'masbro@gmail.com', '08762738281', 'Jl. Kalimas', 'Pria', '2020-08-10', '1999-06-12', '1', '1', '1', '1', '1', '1', '22', 'default.jpg', null, null, null, '2020-05-18 13:50:42', '2020-05-18 13:50:42');
 
 -- ----------------------------
 -- Table structure for `kecamatan`
@@ -150,7 +128,7 @@ CREATE TABLE `kecamatan` (
 -- ----------------------------
 -- Records of kecamatan
 -- ----------------------------
-INSERT INTO `kecamatan` VALUES ('1', 'kademangan', '2020-05-18 10:28:28', '2020-05-18 10:28:28');
+INSERT INTO `kecamatan` VALUES ('1', 'Kademangan', '2020-05-18 10:28:28', '2020-05-18 10:28:28');
 
 -- ----------------------------
 -- Table structure for `kt_kb`
@@ -185,4 +163,4 @@ CREATE TABLE `provinsi` (
 -- ----------------------------
 -- Records of provinsi
 -- ----------------------------
-INSERT INTO `provinsi` VALUES ('1', 'jawa timur', '2020-05-18 10:14:39', '2020-05-18 10:14:39');
+INSERT INTO `provinsi` VALUES ('1', 'Jawa Timur', '2020-05-18 10:14:39', '2020-05-18 10:14:39');

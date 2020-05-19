@@ -2,10 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class kt_kbModel extends CI_Model {
-
+class kt_kb_m extends CI_Model 
+{
     
-
 }
 
-/* End of file kt_kbModel.php */
+/* End of file kt_kb_m.php */

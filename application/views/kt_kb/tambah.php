@@ -16,15 +16,15 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Tambah Data Kota atau Kabupaten</h4>
+                        <h4>Form Tambah Data Kota atau Kabupaten</h4>
                     </div>
                     <div class="card-body">
                         <form action="" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Nama Kota / Kabupaten</label>
-                                        <input type="text" name="nama_kt_kb" value="<?= set_value('nama_kt_kb') ?>" class="form-control">
+                                        <label>Nama Kota atau Kabupaten</label>
+                                        <input type="text" name="nama_kt_kb" value="<?= set_value('nama_kt_kb') ?>" class="form-control" autofocus>
                                         <?= form_error('nama_kt_kb', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                     <div class="form-group">

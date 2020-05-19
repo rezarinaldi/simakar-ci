@@ -3,7 +3,7 @@
         Copyright &copy; Simakar <script>
             document.write(new Date().getFullYear());
         </script>
-        Made with 💜 <div class="bullet"></div> Design By <a href="https://rez4rinaldi.github.io">Reza Rinaldi</a>
+        Made with 💜 <div class="bullet"></div> 🎨 By <a href="https://rez4rinaldi.github.io">Reza Rinaldi</a>
     </div>
 </footer>
 </div>
@@ -23,11 +23,10 @@
 <script src="<?= base_url() ?>/assets/modules/jquery.sparkline.min.js"></script>
 <script src="<?= base_url() ?>/assets/modules/chart.min.js"></script>
 <script src="<?= base_url() ?>/assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-<script src="<?= base_url() ?>/assets/modules/summernote/summernote-bs4.js"></script>
 <script src="<?= base_url() ?>/assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 
 <!-- Page Specific JS File -->
-<script src="<?= base_url() ?>/assets/js/page/index.js"></script>
+<script src="<?= base_url() ?>/assets/js/page/modules-chartjs.js"></script>
 
 <!-- Sweetalert JS -->
 <script src="<?= base_url(); ?>/assets/js/myscript.js"></script>
@@ -88,11 +87,6 @@
 <script>
     $(document).ready(function() {
         $('#mytable').DataTable();
-
-        $('#btnSubmit').click(function() {
-            $(this).prop("disabled", true);
-            $(this).addClass("btn-progress");
-        })
     });
 </script>
 

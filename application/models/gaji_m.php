@@ -2,10 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class divisiModel extends CI_Model {
-
+class gaji_m extends CI_Model 
+{
     
-
 }
 
-/* End of file divisiModel.php */
+/* End of file gaji_m.php */

@@ -16,7 +16,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Tambah Data Kecamatan</h4>
+                        <h4>Form Tambah Data Kecamatan</h4>
                     </div>
                     <div class="card-body">
                         <form action="" method="post">
@@ -24,7 +24,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Kecamatan</label>
-                                        <input type="text" name="nama_kecamatan" value="<?= set_value('nama_kecamatan') ?>" class="form-control">
+                                        <input type="text" name="nama_kecamatan" value="<?= set_value('nama_kecamatan') ?>" class="form-control" autofocus>
                                         <?= form_error('nama_kecamatan', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

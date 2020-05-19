@@ -16,7 +16,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Tambah Data Gaji</h4>
+                        <h4>Form Tambah Data Gaji</h4>
                     </div>
                     <div class="card-body">
                     <form action="" method="post">
@@ -24,7 +24,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Jumlah Gaji</label>
-                                        <input type="number" name="jumlah_gaji" value="<?= set_value('jumlah_gaji') ?>" class="form-control">
+                                        <input type="number" name="jumlah_gaji" value="<?= set_value('jumlah_gaji') ?>" class="form-control" autofocus>
                                         <?= form_error('jumlah_gaji', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

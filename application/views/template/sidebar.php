@@ -24,7 +24,6 @@
                             <li><a href="<?= base_url('kecamatan') ?>"><i class="fas fa-torii-gate"></i> <span>Kecamatan</span></a></likt_kb>
                         </ul>
                     </li>
-                    <li class="nav-item" id="navlaporan"><a class="nav-link" href="<?= base_url('menu/laporan') ?>"><i class="far fa-file-alt"></i><span>Laporan</span></a></li>
                     <li class="menu-header">Tentang</li>
                     <li class="nav-item" id="navtentang"><a class="nav-link" href="<?= base_url('menu/tentang') ?>"><i class="fas fa-rocket"></i><span>Tentang</span></a></li>
                 </ul>

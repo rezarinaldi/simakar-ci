@@ -2137,7 +2137,7 @@ tr:first-child>td>.fc-day-grid-event {
 /* 1.40 Hero */
 .hero {
 	border-radius: 3px;
-	padding: 55px;
+	padding: 100px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;

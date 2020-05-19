@@ -7,7 +7,7 @@
     <title><?= $title ?></title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/employee.svg">
 
@@ -43,7 +43,7 @@
                                     </div>
                                     <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
                                     <div class="invalid-feedback">
-                                        Username Masih Kosong
+                                        Username masih kosong
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                     </div>
                                     <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
                                     <div class="invalid-feedback">
-                                        Password Masih Kosong
+                                        Password masih kosong
                                     </div>
                                 </div>
                             </div>
@@ -85,9 +85,9 @@
                         <div class="text-light p-5 pb-2">
                             <div class="mb-5 pb-3">
                                 <h1 class="mb-2 display-4 font-weight-bold">Do your best, <br> may Allah bless you!</h1>
-                                <h5 class="font-weight-normal text-muted-transparent">Indonesia</h5>
+                                <h5 class="font-weight-normal text-muted-transparent">Indonesian</h5>
                             </div>
-                            Photo by <a class="text-light bb" target="_blank" href="https://unsplash.com/photos/a8lTjWJJgLA">Justin Kauffman</a> on <a class="text-light bb" target="_blank" href="https://unsplash.com">Unsplash</a>
+                            Photo by <a class="text-light bb" target="_blank" href="https://unsplash.com/photos/Vnb8-OwE4MI">Patrick Slade</a> on <a class="text-light bb" target="_blank" href="https://unsplash.com">Unsplash</a>
                         </div>
                     </div>
                 </div>
