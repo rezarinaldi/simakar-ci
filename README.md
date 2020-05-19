@@ -20,3 +20,7 @@
 - [https://gist.github.com/CristinaSolana/1885435](https://gist.github.com/CristinaSolana/1885435)
 - [https://help.github.com/articles/configuring-a-remote-for-a-fork/](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
 - [https://help.github.com/articles/syncing-a-fork/](https://help.github.com/articles/syncing-a-fork/)
+
+## 🧥 Developed by:
+1. [Mukhammad Nuruddin Ismail](https://github.com/nrdnisml)
+2. [Reza Rinaldi](https://github.com/rez4rinaldi)
