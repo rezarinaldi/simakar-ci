@@ -2,6 +2,18 @@
 
 // sweetalert & iziToast
 
+// sukses
+
+const flashData = $("#flash-data").data("flashdata");
+
+if (flashData) {
+	iziToast.success({
+		title: "Sukses!",
+		message: "Data Berhasil " + flashData,
+		position: "center",
+	});
+}
+
 // keluar
 
 $("#keluar").on("click", function (e) {
