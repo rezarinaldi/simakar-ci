@@ -152,15 +152,27 @@
     L.marker([-7.936134, 112.625122], {
             icon: icon_rumah
         }).addTo(mymap)
-        .bindPopup("<b>Hello world!</b><br />I am a popup.");
+        .bindPopup("Nama Karyawan: <b>Fulan</b><br />" +
+            "Alamat: Jl. Soekarno Hatta No. 1<br />" +
+            "Kota atau Kabupaten: Malang<br />" +
+            "Kecamatan: Mojolangu<br />" +
+            "Keteragan: Rumah Sendiri");
     L.marker([-7.947887, 112.624841], {
             icon: icon_rumah
         }).addTo(mymap)
-        .bindPopup("<b>Hello world!</b><br />I am a popup.");
+        .bindPopup("Nama Karyawan: <b>Aisyah</b><br />" +
+            "Alamat: Jl. Soekarno Hatta No. 2<br />" +
+            "Kota atau Kabupaten: Malang<br />" +
+            "Kecamatan: Lowokwaru<br />" +
+            "Keteragan: Rumah Kos");
     L.marker([-7.948482, 112.612739], {
             icon: icon_rumah
         }).addTo(mymap)
-        .bindPopup("<b>Hello world!</b><br />I am a popup.");
+        .bindPopup("Nama Karyawan: <b>Melody</b><br />" +
+            "Alamat: Jl. Soekarno Hatta No. 3<br />" +
+            "Kota atau Kabupaten: Malang<br />" +
+            "Kecamatan: Lowokwaru<br />" +
+            "Keteragan: Rumah Saudara");
 </script>
 
 <!-- <?php foreach ($karyawan as $kw) { ?>
