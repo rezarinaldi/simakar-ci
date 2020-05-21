@@ -32,6 +32,9 @@
 
 <script src="<?= base_url() ?>/assets/js/bootstrap.min.js"></script>
 
+<!-- streetview -->
+<script src="<?= base_url() ?>/assets/js/streetviewbutton.js"></script>
+
 <!-- Template JS File -->
 <script src="<?= base_url() ?>/assets/js/scripts.js"></script>
 <script src="<?= base_url() ?>/assets/js/custom.js"></script>
@@ -43,20 +46,15 @@
     })
 </script>
 
-<!-- leafet ambil koordinat -->
-<script>
+<!-- leaflet ambil koordinat -->
+<script type="text/javascript">
     var curLocation = [0, 0];
     if (curLocation[0] == 0 && curLocation[1] == 0) {
         curLocation = [-7.946263, 112.615548];
     }
 
     var mymap = L.map('map').setView([-7.946263, 112.615548], 14);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox/streets-v11'
-    }).addTo(mymap);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
 
     mymap.attributionControl.setPrefix(false);
     var marker = new L.marker(curLocation, {
@@ -82,6 +80,32 @@
     mymap.addLayer(marker);
 </script>
 
+<!-- leaflet pemetaan -->
+<script type="text/javascript">
+    // Create a map
+    var map = L.map('mapid').setView([-7.946263, 112.615548], 14);
+    // Add an OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    // Add the Street View buttons in the top left corner
+    // (Please get your own Client ID on https://www.mapillary.com/app/settings/developers)
+    L.streetView({
+        position: 'topleft',
+        mapillaryId: 'RC1ZRTBfaVlhWmJmUGVqRk5CYnAxQTpmMGE3OTU0MzM0MTljZTA4'
+    }).addTo(map);
+    // Add a marker to the centre of the map
+    var marker = L.marker(map.getCenter()).addTo(map);
+    // Make sure the marker stays in the centre when the map is moved
+    map.on('move', function() {
+        marker.setLatLng(map.getCenter());
+    });
+    // icon marker
+    var icon_rumah = L.icon({
+        iconUrl: '<?= base_url('assets/img/lokasi.png') ?>',
+        iconSize: [35, 45], // size of the icon
+    });
+</script>
+
+<!-- datatable -->
 <script>
     $(document).ready(function() {
         $('#mytable').DataTable();
