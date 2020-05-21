@@ -52,9 +52,16 @@
     if (curLocation[0] == 0 && curLocation[1] == 0) {
         curLocation = [-7.946263, 112.615548];
     }
-
+    // Create a map
     var mymap = L.map('map').setView([-7.946263, 112.615548], 14);
+    // Add an OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
+    // Add the Street View buttons in the top left corner
+    // (Please get your own Client ID on https://www.mapillary.com/app/settings/developers)
+    L.streetView({
+        position: 'topleft',
+        mapillaryId: 'RC1ZRTBfaVlhWmJmUGVqRk5CYnAxQTpmMGE3OTU0MzM0MTljZTA4'
+    }).addTo(mymap);
 
     mymap.attributionControl.setPrefix(false);
     var marker = new L.marker(curLocation, {
@@ -109,6 +116,84 @@
 <script>
     $(document).ready(function() {
         $('#mytable').DataTable();
+    });
+</script>
+
+<!-- chartjs -->
+<script type="text/javascript">
+    var ctx = document.getElementById("chartDivisi").getContext("2d");
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            datasets: [{
+                data: [80, 50, 40, 30, 20],
+                backgroundColor: [
+                    "#191d21",
+                    "#63ed7a",
+                    "#ffa426",
+                    "#fc544b",
+                    "#6777ef",
+                ],
+                label: "Dataset 1",
+            }, ],
+            labels: ["Black", "Green", "Yellow", "Red", "Blue"],
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: "bottom",
+            },
+        },
+    });
+
+    var ctx = document.getElementById("chartJabatan").getContext("2d");
+    var myChart = new Chart(ctx, {
+        type: "pie",
+        data: {
+            datasets: [{
+                data: [80, 50, 40, 30, 100],
+                backgroundColor: [
+                    "#191d21",
+                    "#63ed7a",
+                    "#ffa426",
+                    "#fc544b",
+                    "#6777ef",
+                ],
+                label: "Dataset 1",
+            }, ],
+            labels: ["Black", "Green", "Yellow", "Red", "Blue"],
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: "bottom",
+            },
+        },
+    });
+
+    var ctx = document.getElementById("chartProvinsi").getContext("2d");
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            datasets: [{
+                data: [80, 50, 40, 30, 20],
+                backgroundColor: [
+                    "#191d21",
+                    "#63ed7a",
+                    "#ffa426",
+                    "#fc544b",
+                    "#6777ef",
+                ],
+                label: "Dataset 1",
+            }, ],
+            labels: ["Black", "Green", "Yellow", "Red", "Blue"],
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: "bottom",
+            },
+        },
     });
 </script>
 

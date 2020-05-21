@@ -39,7 +39,7 @@
                                 <img class="mr-3 rounded-circle" width="50" src="<?= base_url() ?>/assets/img/avatar/avatar-0.png" alt="avatar">
                                 <div class="media-body">
                                     <div class="float-right text-primary">19 Mei</div>
-                                    <div class="media-title">Farhan A Mujib</div>
+                                    <div class="media-title">Fulan bin Fulan</div>
                                     <span class="text-small text-muted">...</span>
                                 </div>
                             </li>
