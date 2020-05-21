@@ -161,7 +161,7 @@
                         <h4>Lokasi Rumah Karyawan</h4>
                     </div>
                     <div class="card-body">
-                        <div id="map" style="height: 1200px;">
+                        <div id="ubah" style="height: 1200px;">
                         </div>
                     </div>
                 </div>

@@ -34,8 +34,28 @@ class kecamatan extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function tambah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Ditambahkan');
+        redirect('kecamatan');
+    }
+
+    public function ubah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Diubah');
+        redirect('kecamatan');
+    }
+
     public function hapus()
     {
+        
+
+        $this->session->set_flashdata('pesan', 'Dihapus');
+        redirect('kecamatan');
     }
 }
 

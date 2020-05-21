@@ -46,22 +46,51 @@
     })
 </script>
 
-<!-- leaflet ambil koordinat -->
+<!-- leaflet ambil koordinat (tambah) -->
 <script type="text/javascript">
     var curLocation = [0, 0];
     if (curLocation[0] == 0 && curLocation[1] == 0) {
         curLocation = [-7.946263, 112.615548];
     }
     // Create a map
-    var mymap = L.map('map').setView([-7.946263, 112.615548], 14);
+    var mymap = L.map('tambah').setView([-7.946263, 112.615548], 14);
     // Add an OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
-    // Add the Street View buttons in the top left corner
-    // (Please get your own Client ID on https://www.mapillary.com/app/settings/developers)
-    L.streetView({
-        position: 'topleft',
-        mapillaryId: 'RC1ZRTBfaVlhWmJmUGVqRk5CYnAxQTpmMGE3OTU0MzM0MTljZTA4'
-    }).addTo(mymap);
+
+    mymap.attributionControl.setPrefix(false);
+    var marker = new L.marker(curLocation, {
+        draggable: 'true'
+    });
+
+    marker.on('dragend', function(event) {
+        var position = marker.getLatLng();
+        marker.setLatLng(position, {
+            draggable: 'true'
+        }).bindPopup(position).update();
+        $("#Latitude").val(position.lat);
+        $("#Longitude").val(position.lng).keyup();
+    });
+
+    $("#Latitude, #Longitude").change(function() {
+        var position = [parseInt($("#Latitude").val()), parseInt($("#Longitude").val())];
+        marker.setLatLng(position, {
+            draggable: 'true'
+        }).bindPopup(position).update();
+        mymap.panTo(position);
+    });
+    mymap.addLayer(marker);
+</script>
+
+<!-- leaflet ambil koordinat (ubah) -->
+<script type="text/javascript">
+    var curLocation = [0, 0];
+    if (curLocation[0] == 0 && curLocation[1] == 0) {
+        curLocation = [-7.946263, 112.615548];
+    }
+    // Create a map
+    var mymap = L.map('ubah').setView([-7.946263, 112.615548], 14);
+    // Add an OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
 
     mymap.attributionControl.setPrefix(false);
     var marker = new L.marker(curLocation, {
@@ -89,22 +118,26 @@
 
 <!-- leaflet pemetaan -->
 <script type="text/javascript">
+    var curLocation = [0, 0];
+    if (curLocation[0] == 0 && curLocation[1] == 0) {
+        curLocation = [-7.946263, 112.615548];
+    }
     // Create a map
-    var map = L.map('mapid').setView([-7.946263, 112.615548], 14);
+    var mymap = L.map('map').setView([-7.946263, 112.615548], 14);
     // Add an OpenStreetMap tile layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
     // Add the Street View buttons in the top left corner
     // (Please get your own Client ID on https://www.mapillary.com/app/settings/developers)
     L.streetView({
         position: 'topleft',
         mapillaryId: 'RC1ZRTBfaVlhWmJmUGVqRk5CYnAxQTpmMGE3OTU0MzM0MTljZTA4'
-    }).addTo(map);
+    }).addTo(mymap);
+
     // Add a marker to the centre of the map
-    var marker = L.marker(map.getCenter()).addTo(map);
+    var marker = L.marker(mymap.getCenter()).addTo(mymap);
     // Make sure the marker stays in the centre when the map is moved
-    map.on('move', function() {
-        marker.setLatLng(map.getCenter());
-    });
+    mymap.on('move', function() { marker.setLatLng(mymap.getCenter()); });
+
     // icon marker
     var icon_rumah = L.icon({
         iconUrl: '<?= base_url('assets/img/lokasi.png') ?>',

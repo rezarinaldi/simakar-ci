@@ -18,7 +18,7 @@
                             <h4>Peta</h4>
                         </div>
                         <div class="card-body">
-                            <div id="mapid" style="height: 600px;">
+                            <div id="map" style="height: 600px;">
                             </div>
                         </div>
                     </div>

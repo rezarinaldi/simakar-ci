@@ -34,8 +34,28 @@ class provinsi extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function tambah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Ditambahkan');
+        redirect('provinsi');
+    }
+
+    public function ubah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Diubah');
+        redirect('provinsi');
+    }
+
     public function hapus()
     {
+        
+
+        $this->session->set_flashdata('pesan', 'Dihapus');
+        redirect('provinsi');
     }
 }
 

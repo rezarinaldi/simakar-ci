@@ -34,9 +34,28 @@ class divisi extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function tambah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Ditambahkan');
+        redirect('divisi');
+    }
+
+    public function ubah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Diubah');
+        redirect('divisi');
+    }
+
     public function hapus()
     {
         
+
+        $this->session->set_flashdata('pesan', 'Dihapus');
+        redirect('divisi');
     }
 }
 

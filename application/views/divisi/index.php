@@ -4,7 +4,7 @@
         <div class="section-header">
             <h1><?= $title ?></h1>
         </div>
-        
+
         <div class="section-body">
             <h2 class="section-title">Aturan</h2>
             <p class="section-lead">
@@ -18,13 +18,14 @@
                     <div class="card-header">
                         <h4>Data Divisi</h4>
                         <div class="card-header-form">
-                        <a href="<?= base_url('divisi/tambah') ?>" class="btn btn-icon btn-dark"><i class="fas fa-plus-circle"></i> Tambah Data</a>
+                            <a href="<?= base_url('divisi/tambah') ?>" class="btn btn-icon btn-dark"><i class="fas fa-plus-circle"></i> Tambah Data</a>
                         </div>
+                        <div id="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover table-md" id="mytable">
-                            <thead>
+                                <thead>
                                     <tr align="center">
                                         <th>No</th>
                                         <th>Nama Divisi</th>

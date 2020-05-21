@@ -34,8 +34,28 @@ class kt_kb extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function tambah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Ditambahkan');
+        redirect('kt_kb');
+    }
+
+    public function ubah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Diubah');
+        redirect('kt_kb');
+    }
+
     public function hapus()
     {
+        
+
+        $this->session->set_flashdata('pesan', 'Dihapus');
+        redirect('kt_kb');
     }
 }
 

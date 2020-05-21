@@ -14,14 +14,6 @@ class karyawan extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function tambah_simpan()
-    {
-
-
-        $this->session->set_flashdata('pesan', 'Ditambahkan');
-        redirect('menu/karyawan');
-    }
-
     public function ubah()
     {
         $data['title'] = 'Karyawan';
@@ -30,6 +22,14 @@ class karyawan extends CI_Controller
         $this->load->view('template/sidebar', $data);
         $this->load->view('karyawan/ubah', $data);
         $this->load->view('template/footer');
+    }
+
+    public function tambah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Ditambahkan');
+        redirect('menu/karyawan');
     }
 
     public function ubah_simpan()

@@ -25,14 +25,6 @@ class gaji extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function tambah_simpan()
-    {
-
-
-        $this->session->set_flashdata('pesan', 'Ditambahkan');
-        redirect('gaji');
-    }
-
     public function ubah()
     {
         $data['title'] = 'Gaji';
@@ -41,6 +33,14 @@ class gaji extends CI_Controller
         $this->load->view('template/sidebar', $data);
         $this->load->view('gaji/ubah', $data);
         $this->load->view('template/footer');
+    }
+
+    public function tambah_simpan()
+    {
+
+
+        $this->session->set_flashdata('pesan', 'Ditambahkan');
+        redirect('gaji');
     }
 
     public function ubah_simpan()

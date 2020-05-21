@@ -19,7 +19,7 @@
                         <h4>Form Ubah Data Gaji</h4>
                     </div>
                     <div class="card-body">
-                    <form action="" method="post">
+                        <form action="" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

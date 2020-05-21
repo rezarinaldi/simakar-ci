@@ -18,13 +18,14 @@
                     <div class="card-header">
                         <h4>Data Kota dan Kabupaten</h4>
                         <div class="card-header-form">
-                        <a href="<?= base_url('kt_kb/tambah') ?>" class="btn btn-icon btn-dark"><i class="fas fa-plus-circle"></i> Tambah Data</a>
+                            <a href="<?= base_url('kt_kb/tambah') ?>" class="btn btn-icon btn-dark"><i class="fas fa-plus-circle"></i> Tambah Data</a>
                         </div>
+                        <div id="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover table-md" id="mytable">
-                            <thead>
+                                <thead>
                                     <tr align="center">
                                         <th>No</th>
                                         <th>Nama Kota / Kabupaten</th>
