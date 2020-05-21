@@ -81,6 +81,8 @@
     mymap.addLayer(marker);
 </script>
 
+<!-- curLocation = [<?= $karyawan->latitude ?>, <?= $karyawan->longitude ?>] -->
+
 <!-- leaflet ambil koordinat (ubah) -->
 <script type="text/javascript">
     var curLocation = [0, 0];
@@ -136,14 +138,34 @@
     // Add a marker to the centre of the map
     var marker = L.marker(mymap.getCenter()).addTo(mymap);
     // Make sure the marker stays in the centre when the map is moved
-    mymap.on('move', function() { marker.setLatLng(mymap.getCenter()); });
+    mymap.on('move', function() {
+        marker.setLatLng(mymap.getCenter());
+    });
 
     // icon marker
     var icon_rumah = L.icon({
         iconUrl: '<?= base_url('assets/img/lokasi.png') ?>',
-        iconSize: [35, 45], // size of the icon
+        iconSize: [50, 55], // size of the icon [lebar, tinggi]
     });
+
+    // lokasi rumah
+    L.marker([-7.936134, 112.625122], {
+            icon: icon_rumah
+        }).addTo(mymap)
+        .bindPopup("<b>Hello world!</b><br />I am a popup.");
+    L.marker([-7.947887, 112.624841], {
+            icon: icon_rumah
+        }).addTo(mymap)
+        .bindPopup("<b>Hello world!</b><br />I am a popup.");
+    L.marker([-7.948482, 112.612739], {
+            icon: icon_rumah
+        }).addTo(mymap)
+        .bindPopup("<b>Hello world!</b><br />I am a popup.");
 </script>
+
+<!-- <?php foreach ($karyawan as $kw) { ?>
+
+<?php } ?> -->
 
 <!-- datatable -->
 <script>
