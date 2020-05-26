@@ -1,3 +1,6 @@
+<?php 
+    $this->load->helper('tgl_indo_helper');
+?>
 <!-- Main Content -->
 <div class="main-content">
     <section class="section">
@@ -47,9 +50,25 @@
                                                 </a>
                                             </td>
                                             <td><?= $kw['nama'] ?></td>
-                                            <td><?= $kw['id_jabatan'] ?></td>
-                                            <td><?= $kw['id_divisi'] ?></td>
-                                            <td><?= $kw['tanggal_masuk'] ?></td>
+                                            <td>
+                                                <!--tampilkan nama jabatan  -->
+                                                <?php foreach($jabatan as $jb): ?>
+                                                    <?php if($kw['id_jabatan'] == $jb['id']): ?>
+                                                            <?= $jb['nama_jabatan']; ?>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+                                                <!-- end tampil nama jabatan  -->
+                                            </td>
+                                            <td>
+                                                <!--tampilkan nama divisi  -->
+                                                <?php foreach($divisi as $dv): ?>
+                                                    <?php if($kw['id_divisi'] == $dv['id']): ?>
+                                                            <?= $dv['nama_divisi']; ?>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+                                                <!-- end tampil nama divisi  -->
+                                            </td>
+                                            <td><?= mediumdate_indo($kw['tanggal_masuk']) ?></td>
                                             <td>
                                                 <a href="<?= base_url('karyawan/profil/') . $kw['id'] ?>" class="btn btn-sm btn-primary"><i class="fas fa-search-plus"></i> Profil</a>
                                                 <a href="<?= base_url('karyawan/ubah/') . $kw['id'] ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>

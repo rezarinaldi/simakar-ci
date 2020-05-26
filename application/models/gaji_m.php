@@ -12,38 +12,31 @@ class gaji_m extends CI_Model
     {
         parent::__construct();
         $this->_client = new Client([
-            'base_uri' => 'http://localhost/simakar-ci/rest-server/public/gaji'
+            'base_uri' => 'http://localhost:8000/'
         ]);
     }
 
-    public function getAll()
+    ################################### MODEL DATA GAJI #############################################
+
+
+    public function getAllGaji()
     {
-        $response = $this->_client->request('GET', 'gaji');
-
+        $response = $this->_client->request('GET', 'gaji/');
         $result = json_decode($response->getBody(), true);
-
         return $result;
     }
 
-    public function getById($id = null)
+    public function getGajiById($id)
     {
-        $response = $this->_client->request('GET', 'gaji', ['query' => ['id' => $id]]);
-
+        $response = $this->_client->request('GET', 'gaji/'.$id);
         $result = json_decode($response->getBody(), true);
-
-        return $result;
+        return $result[0];
     }
 
-    public function tambah()
+    public function addGaji()
     {
         $data = [
-            'nama'     =>  $this->input->post('nama', true),
-            'alamat'   =>  $this->input->post('alamat', true),
-            'telepon'  =>  $this->input->post('telepon', true),
-            'level'    =>  $this->input->post('level', true),
-            'username' =>  $this->input->post('username', true),
-            'password' =>  $this->input->post('password', true),
-            'gambar'    =>  $this->uploadGambar()
+            'nama'          =>  $this->input->post('nama', true),
         ];
 
         $response = $this->_client->request('POST', 'gaji', [
@@ -51,21 +44,13 @@ class gaji_m extends CI_Model
         ]);
 
         $result = json_decode($response->getBody(), true);
-
         return $result;
     }
 
-    public function ubah()
+    public function updateGaji()
     {
         $data = [
-            'nama'     =>  $this->input->post('nama', true),
-            'alamat'   =>  $this->input->post('alamat', true),
-            'telepon'  =>  $this->input->post('telepon', true),
-            'level'    =>  $this->input->post('level', true),
-            'username' =>  $this->input->post('username', true),
-            'password' =>  $this->input->post('password', true),
-            'gambar'    =>  $this->ubahGambar(),
-            'id'       =>  $this->input->post('id', true),
+            'nama'          =>  $this->input->post('nama', true),
         ];
 
         $response = $this->_client->request('PUT', 'gaji', [
@@ -73,20 +58,13 @@ class gaji_m extends CI_Model
         ]);
 
         $result = json_decode($response->getBody(), true);
-
         return $result;
     }
 
-    public function hapus($id)
+    public function deleteGaji($id)
     {
-        $response = $this->_client->request('DELETE', 'gaji', [
-            'form_params' => [
-                'id' => $id
-            ]
-        ]);
-
+        $response = $this->_client->request('DELETE', 'gaji/'.$id);
         $result = json_decode($response->getBody(), true);
-
         return $result;
     }
 }

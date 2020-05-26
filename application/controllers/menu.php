@@ -6,6 +6,9 @@ class menu extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('karyawan_m','karyawan');
+		$this->load->model('divisi_m','divisi');
+		$this->load->model('jabatan_m','jabatan');
 		check_not_login();
 	}
 	
@@ -32,8 +35,10 @@ class menu extends CI_Controller
 	public function karyawan()
 	{
 		$data['title'] = 'Karyawan';
-		$data['karyawan'] = $this->karyawan_m->getAll();
-
+		$data['karyawan'] = $this->karyawan->getAllKaryawan();
+		$data['divisi'] = $this->divisi->getAllDivisi();
+		$data['jabatan'] = $this->jabatan->getAllJabatan();
+		
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('karyawan/index', $data);
