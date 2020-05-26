@@ -34,11 +34,11 @@
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="pria" required="">
+                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria" required="">
                                     <label class="custom-control-label" for="Pria">Pria</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="wanita" required="">
+                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita" required="">
                                     <label class="custom-control-label" for="Wanita">Wanita</label>
                                     <div class="invalid-feedback">
                                         Jenis kelamin tidak boleh kosong
