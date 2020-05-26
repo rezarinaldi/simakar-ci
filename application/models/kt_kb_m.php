@@ -1,9 +1,10 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
+
 use GuzzleHttp\Client;
 
-class kt_kb_m extends CI_Model 
+class kt_kb_m extends CI_Model
 {
     private $_client;
 
@@ -25,15 +26,16 @@ class kt_kb_m extends CI_Model
 
     public function getKotaById($id)
     {
-        $response = $this->_client->request('GET', 'kota/'.$id);
+        $response = $this->_client->request('GET', 'kota/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addKota()
     {
         $data = [
-           
+            'nama_kt_kb'          =>  $this->input->post('nama_kt_kb', true),
+            'kode_pos'          =>  $this->input->post('kode_pos', true),
         ];
 
         $response = $this->_client->request('POST', 'kota', [
@@ -44,13 +46,14 @@ class kt_kb_m extends CI_Model
         return $result;
     }
 
-    public function updateKota()
+    public function updateKota($id)
     {
         $data = [
-            
+            'nama_kt_kb'          =>  $this->input->post('nama_kt_kb', true),
+            'kode_pos'          =>  $this->input->post('kode_pos', true),
         ];
 
-        $response = $this->_client->request('PUT', 'kota', [
+        $response = $this->_client->request('PUT', 'kota/' . $id, [
             'form_params' => $data
         ]);
 
@@ -60,7 +63,7 @@ class kt_kb_m extends CI_Model
 
     public function deleteKota($id)
     {
-        $response = $this->_client->request('DELETE', 'kota/'.$id);
+        $response = $this->_client->request('DELETE', 'kota/' . $id);
         $result = json_decode($response->getBody(), true);
         return $result;
     }

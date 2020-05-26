@@ -111,7 +111,7 @@ CREATE TABLE `karyawan` (
 -- ----------------------------
 -- Records of karyawan
 -- ----------------------------
-INSERT INTO `karyawan` VALUES ('1', 'Masbro', 'masbro@gmail.com', '08762738281', 'Jl. Kalimas', 'Pria', '2020-08-10', '1999-06-12', '1', '1', '1', '1', '1', '1', '22', 'default.jpg', null, null, null, '2020-05-18 13:50:42', '2020-05-18 13:50:42');
+INSERT INTO `karyawan` VALUES ('1', 'Masbro', 'masbro@gmail.com', '087627382819', 'Jl. Gresik No. 3', 'Pria', '2020-08-10', '1999-06-12', '1', '1', '1', '1', '1', '1', '22', 'default.jpg', '-7.9678201303828', '112.6176723582446', 'Rumah Sendiri', '2020-05-18 06:50:42', '2020-05-26 14:49:09');
 
 -- ----------------------------
 -- Table structure for `kecamatan`
@@ -141,12 +141,13 @@ CREATE TABLE `kt_kb` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of kt_kb
 -- ----------------------------
-INSERT INTO `kt_kb` VALUES ('1', 'Kota Probolinggo ', '17823', '2020-05-18 10:16:00', '2020-05-18 10:16:00');
+INSERT INTO `kt_kb` VALUES ('1', 'Kota Probolinggo', '17823', '2020-05-18 03:16:00', '2020-05-18 03:16:00');
+INSERT INTO `kt_kb` VALUES ('2', 'Kabupaten Malang', '65154', '2020-05-26 15:20:15', '2020-05-26 15:20:15');
 
 -- ----------------------------
 -- Table structure for `provinsi`

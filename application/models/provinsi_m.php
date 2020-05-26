@@ -1,9 +1,10 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
+
 use GuzzleHttp\Client;
 
-class provinsi_m extends CI_Model 
+class provinsi_m extends CI_Model
 {
     private $_client;
 
@@ -25,15 +26,15 @@ class provinsi_m extends CI_Model
 
     public function getProvinsiById($id)
     {
-        $response = $this->_client->request('GET', 'provinsi/'.$id);
+        $response = $this->_client->request('GET', 'provinsi/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addProvinsi()
     {
         $data = [
-           
+            'nama_provinsi'          =>  $this->input->post('nama_provinsi', true),
         ];
 
         $response = $this->_client->request('POST', 'provinsi', [
@@ -44,13 +45,13 @@ class provinsi_m extends CI_Model
         return $result;
     }
 
-    public function updateProvinsi()
+    public function updateProvinsi($id)
     {
         $data = [
-            
+            'nama_provinsi'          =>  $this->input->post('nama_provinsi', true),
         ];
 
-        $response = $this->_client->request('PUT', 'provinsi', [
+        $response = $this->_client->request('PUT', 'provinsi/' . $id, [
             'form_params' => $data
         ]);
 
@@ -60,7 +61,7 @@ class provinsi_m extends CI_Model
 
     public function deleteProvinsi($id)
     {
-        $response = $this->_client->request('DELETE', 'provinsi/'.$id);
+        $response = $this->_client->request('DELETE', 'provinsi/' . $id);
         $result = json_decode($response->getBody(), true);
         return $result;
     }

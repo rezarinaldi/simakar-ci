@@ -1,6 +1,3 @@
-<?php 
-    $this->load->helper('tgl_indo_helper');
-?>
 <!-- Main Content -->
 <div class="main-content">
     <section class="section">
@@ -23,10 +20,11 @@
                         <div class="card-header-form">
                             <a href="<?= base_url('karyawan/tambah') ?>" class="btn btn-icon btn-dark"><i class="fas fa-plus-circle"></i> Tambah Data</a>
                         </div>
+                        <div id="flash-data" data-flashdata="<?= $this->session->flashdata('pesan'); ?>"></div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover table-md" id="mytable">
+                            <table class="table table-hover table-md table-striped" id="mytable">
                                 <thead>
                                     <tr align="center">
                                         <th>No</th>
@@ -52,19 +50,15 @@
                                             <td><?= $kw['nama'] ?></td>
                                             <td>
                                                 <!--tampilkan nama jabatan  -->
-                                                <?php foreach($jabatan as $jb): ?>
-                                                    <?php if($kw['id_jabatan'] == $jb['id']): ?>
-                                                            <?= $jb['nama_jabatan']; ?>
-                                                    <?php endif; ?>
+                                                <?php foreach ($jabatan as $jb) : ?>
+                                                    <?= $jb['nama_jabatan']; ?>
                                                 <?php endforeach; ?>
                                                 <!-- end tampil nama jabatan  -->
                                             </td>
                                             <td>
                                                 <!--tampilkan nama divisi  -->
-                                                <?php foreach($divisi as $dv): ?>
-                                                    <?php if($kw['id_divisi'] == $dv['id']): ?>
-                                                            <?= $dv['nama_divisi']; ?>
-                                                    <?php endif; ?>
+                                                <?php foreach ($divisi as $dv) : ?>
+                                                    <?= $dv['nama_divisi']; ?>
                                                 <?php endforeach; ?>
                                                 <!-- end tampil nama divisi  -->
                                             </td>

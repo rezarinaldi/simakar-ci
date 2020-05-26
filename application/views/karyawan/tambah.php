@@ -13,7 +13,7 @@
         </div>
 
         <div class="row">
-        
+
             <div class="col-4 col-md-4 col-lg-4">
                 <div class="card">
 
@@ -116,27 +116,27 @@
                                 <div class="invalid-feedback">
                                     Latitude tidak boleh kosong
                                 </div>
-                            </div> 
+                            </div>
 
                             <div class="form-group">
                                 <label>Provinsi</label>
                                 <select name="id_provinsi" class="form-control" required="">
                                     <option value="">Pilih Provinsi</option>
-                                    <?php foreach ($provinsi as $provinsi ) :?>
-                                        <option value="<?=$provinsi['id']?>"><?=$provinsi['nama_provinsi']?></option>
+                                    <?php foreach ($provinsi as $provinsi) : ?>
+                                        <option value="<?= $provinsi['id'] ?>"><?= $provinsi['nama_provinsi'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
                                     Provinsi tidak boleh kosong
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label>Kota atau Kabupaten</label>
                                 <select name="id_kt_kb" class="form-control" required="">
                                     <option value="">Pilih Kota atau Kabupaten</option>
-                                    <?php foreach ($kota as $kota ) :?>
-                                        <option value="<?=$kota['id']?>"><?=$kota['nama_kt_kb']?></option>
+                                    <?php foreach ($kota as $kota) : ?>
+                                        <option value="<?= $kota['id'] ?>"><?= $kota['nama_kt_kb'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
@@ -148,8 +148,8 @@
                                 <label>Kecamatan</label>
                                 <select name="id_kecamatan" class="form-control" required="">
                                     <option value="">Pilih Kecamatan</option>
-                                    <?php foreach ($kecamatan as $kecamatan ) :?>
-                                        <option value="<?=$kecamatan['id']?>"><?=$kecamatan['nama_kecamatan']?></option>
+                                    <?php foreach ($kecamatan as $kecamatan) : ?>
+                                        <option value="<?= $kecamatan['id'] ?>"><?= $kecamatan['nama_kecamatan'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
@@ -161,8 +161,8 @@
                                 <label>Jabatan</label>
                                 <select name="id_jabatan" class="form-control" required="">
                                     <option value="">Pilih Jabatan</option>
-                                    <?php foreach ($jabatan as $jabatan ) :?>
-                                        <option value="<?=$jabatan['id']?>"><?=$jabatan['nama_jabatan']?></option>
+                                    <?php foreach ($jabatan as $jabatan) : ?>
+                                        <option value="<?= $jabatan['id'] ?>"><?= $jabatan['nama_jabatan'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
@@ -174,8 +174,8 @@
                                 <label>Divisi</label>
                                 <select name="id_divisi" class="form-control" required="">
                                     <option value="">Pilih Divisi</option>
-                                    <?php foreach ($divisi as $divisi ) :?>
-                                        <option value="<?=$divisi['id']?>"><?=$divisi['nama_divisi']?></option>
+                                    <?php foreach ($divisi as $divisi) : ?>
+                                        <option value="<?= $divisi['id'] ?>"><?= $divisi['nama_divisi'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
@@ -187,8 +187,8 @@
                                 <label>Gaji</label>
                                 <select name="id_gaji" class="form-control" required="">
                                     <option value="">Pilih Gaji</option>
-                                    <?php foreach ($gaji as $gaji ) :?>
-                                        <option value="<?=$gaji['id']?>"><?=$gaji['jumlah_gaji']?></option>
+                                    <?php foreach ($gaji as $gaji) : ?>
+                                        <option value="<?= $gaji['id'] ?>"><?= $gaji['jumlah_gaji'] ?></option>
                                     <?php endforeach; ?>
 
                                 </select>

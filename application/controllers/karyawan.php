@@ -5,27 +5,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class karyawan extends CI_Controller
 {
     public function __construct()
-	{
-		parent::__construct();
-		$this->load->model('karyawan_m','karyawan');
-		$this->load->model('gaji_m','gaji');
-		$this->load->model('divisi_m','divisi');
-		$this->load->model('jabatan_m','jabatan');
-		$this->load->model('kecamatan_m','kecamatan');
-		$this->load->model('kt_kb_m','kota');
-		$this->load->model('provinsi_m','provinsi');
-		check_not_login();
+    {
+        parent::__construct();
+        check_not_login();
     }
-    
+
     public function tambah()
     {
         $data['title'] = 'Karyawan';
-        $data['gaji'] = $this->gaji->getAllGaji();
-        $data['divisi'] = $this->divisi->getAllDivisi();
-        $data['jabatan'] = $this->jabatan->getAllJabatan();
-        $data['kecamatan'] = $this->kecamatan->getAllkecamatan();
-        $data['kota'] = $this->kota->getAllKota();
-        $data['provinsi'] = $this->provinsi->getAllProvinsi();
+        $data['gaji'] = $this->gaji_m->getAllGaji();
+        $data['divisi'] = $this->divisi_m->getAllDivisi();
+        $data['jabatan'] = $this->jabatan_m->getAllJabatan();
+        $data['kecamatan'] = $this->kecamatan_m->getAllkecamatan();
+        $data['kota'] = $this->kt_kb_m->getAllKota();
+        $data['provinsi'] = $this->provinsi_m->getAllProvinsi();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -36,30 +29,30 @@ class karyawan extends CI_Controller
     public function ubah($id)
     {
         $data['title'] = 'Karyawan';
-        $data['karyawan'] = $this->karyawan->getKaryawanById($id);
-        $data['gaji'] = $this->gaji->getAllGaji();
-        $data['divisi'] = $this->divisi->getAllDivisi();
-        $data['jabatan'] = $this->jabatan->getAllJabatan();
-        $data['kecamatan'] = $this->kecamatan->getAllkecamatan();
-        $data['kota'] = $this->kota->getAllKota();
-        $data['provinsi'] = $this->provinsi->getAllProvinsi();
+        $data['karyawan'] = $this->karyawan_m->getKaryawanById($id);
+        $data['gaji'] = $this->gaji_m->getAllGaji();
+        $data['divisi'] = $this->divisi_m->getAllDivisi();
+        $data['jabatan'] = $this->jabatan_m->getAllJabatan();
+        $data['kecamatan'] = $this->kecamatan_m->getAllkecamatan();
+        $data['kota'] = $this->kt_kb_m->getAllKota();
+        $data['provinsi'] = $this->provinsi_m->getAllProvinsi();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('karyawan/ubah', $data);
-        $this->load->view('template/footer');
+        $this->load->view('template/footer', $data);
     }
 
     public function tambah_simpan()
     {
-        $this->karyawan->addKaryawan();
+        $this->karyawan_m->addKaryawan();
         $this->session->set_flashdata('pesan', 'Ditambahkan');
         redirect('menu/karyawan');
     }
 
     public function ubah_simpan($id)
     {
-        $this->karyawan->updateKaryawan($id);
+        $this->karyawan_m->updateKaryawan($id);
         $this->session->set_flashdata('pesan', 'Diubah');
         redirect('menu/karyawan');
     }
@@ -67,15 +60,14 @@ class karyawan extends CI_Controller
     public function profil($id)
     {
         $data['title'] = 'Profil Karyawan';
-        $data['karyawan'] = $this->karyawan->getKaryawanById($id);
-        $data['gaji'] = $this->gaji->getAllGaji();
-        $data['divisi'] = $this->divisi->getAllDivisi();
-        $data['jabatan'] = $this->jabatan->getAllJabatan();
-        $data['kecamatan'] = $this->kecamatan->getAllkecamatan();
-        $data['kota'] = $this->kota->getAllKota();
-        $data['provinsi'] = $this->provinsi->getAllProvinsi();
+        $data['karyawan'] = $this->karyawan_m->getKaryawanById($id);
+        $data['gaji'] = $this->gaji_m->getAllGaji();
+        $data['divisi'] = $this->divisi_m->getAllDivisi();
+        $data['jabatan'] = $this->jabatan_m->getAllJabatan();
+        $data['kecamatan'] = $this->kecamatan_m->getAllkecamatan();
+        $data['kota'] = $this->kt_kb_m->getAllKota();
+        $data['provinsi'] = $this->provinsi_m->getAllProvinsi();
 
-        // var_dump($data['karyawan']);die();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('karyawan/profil', $data);
@@ -84,12 +76,10 @@ class karyawan extends CI_Controller
 
     public function hapus($id)
     {
-        $this->karyawan->deleteKaryawan($id);
+        $this->karyawan_m->deleteKaryawan($id);
         $this->session->set_flashdata('pesan', 'Dihapus');
         redirect('menu/karyawan');
     }
-
-
 }
 
 /* End of file karyawan.php */

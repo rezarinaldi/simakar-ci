@@ -1,9 +1,10 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
+
 use GuzzleHttp\Client;
 
-class jabatan_m extends CI_Model 
+class jabatan_m extends CI_Model
 {
 
     private $_client;
@@ -26,15 +27,15 @@ class jabatan_m extends CI_Model
 
     public function getJabatanById($id)
     {
-        $response = $this->_client->request('GET', 'jabatan/'.$id);
+        $response = $this->_client->request('GET', 'jabatan/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addJabatan()
     {
         $data = [
-           
+            'nama_jabatan'          =>  $this->input->post('nama_jabatan', true),
         ];
 
         $response = $this->_client->request('POST', 'jabatan', [
@@ -45,13 +46,13 @@ class jabatan_m extends CI_Model
         return $result;
     }
 
-    public function updateJabatan()
+    public function updateJabatan($id)
     {
         $data = [
-            
+            'nama_jabatan'          =>  $this->input->post('nama_jabatan', true),
         ];
 
-        $response = $this->_client->request('PUT', 'jabatan', [
+        $response = $this->_client->request('PUT', 'jabatan/' . $id, [
             'form_params' => $data
         ]);
 
@@ -61,7 +62,7 @@ class jabatan_m extends CI_Model
 
     public function deleteJabatan($id)
     {
-        $response = $this->_client->request('DELETE', 'Jabatan/'.$id);
+        $response = $this->_client->request('DELETE', 'jabatan/' . $id);
         $result = json_decode($response->getBody(), true);
         return $result;
     }

@@ -6,38 +6,42 @@ class menu extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('karyawan_m','karyawan');
-		$this->load->model('divisi_m','divisi');
-		$this->load->model('jabatan_m','jabatan');
 		check_not_login();
 	}
 	
 	public function index()
 	{
 		$data['title'] = 'Beranda';
+		$data['karyawan'] = $this->karyawan_m->getAllKaryawan();
+		$data['divisi'] = $this->divisi_m->getAllDivisi();
+        $data['jabatan'] = $this->jabatan_m->getAllJabatan();
+		$data['provinsi'] = $this->provinsi_m->getAllProvinsi();
 
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('beranda', $data);
-		$this->load->view('template/footer');
+		$this->load->view('template/footer', $data);
 	}
 
 	public function peta()
 	{
 		$data['title'] = 'Pemetaan';
+		$data['karyawan'] = $this->karyawan_m->getAllKaryawan();
+		$data['kecamatan'] = $this->kecamatan_m->getAllkecamatan();
+        $data['kota'] = $this->kt_kb_m->getAllKota();
 
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('pemetaan', $data);
-		$this->load->view('template/footer');
+		$this->load->view('template/footer', $data);
 	}
 
 	public function karyawan()
 	{
 		$data['title'] = 'Karyawan';
-		$data['karyawan'] = $this->karyawan->getAllKaryawan();
-		$data['divisi'] = $this->divisi->getAllDivisi();
-		$data['jabatan'] = $this->jabatan->getAllJabatan();
+		$data['karyawan'] = $this->karyawan_m->getAllKaryawan();
+		$data['divisi'] = $this->divisi_m->getAllDivisi();
+		$data['jabatan'] = $this->jabatan_m->getAllJabatan();
 		
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);

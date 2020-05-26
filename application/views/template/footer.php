@@ -81,13 +81,11 @@
     mymap.addLayer(marker);
 </script>
 
-<!-- curLocation = [<?= $karyawan->latitude ?>, <?= $karyawan->longitude ?>] -->
-
 <!-- leaflet ambil koordinat (ubah) -->
 <script type="text/javascript">
     var curLocation = [0, 0];
     if (curLocation[0] == 0 && curLocation[1] == 0) {
-        curLocation = [-7.946263, 112.615548];
+        curLocation = [<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>];
     }
     // Create a map
     var mymap = L.map('ubah').setView([-7.946263, 112.615548], 14);
@@ -120,10 +118,6 @@
 
 <!-- leaflet pemetaan -->
 <script type="text/javascript">
-    var curLocation = [0, 0];
-    if (curLocation[0] == 0 && curLocation[1] == 0) {
-        curLocation = [-7.946263, 112.615548];
-    }
     // Create a map
     var mymap = L.map('map').setView([-7.946263, 112.615548], 14);
     // Add an OpenStreetMap tile layer
@@ -149,35 +143,21 @@
     });
 
     // lokasi rumah
-    L.marker([-7.936134, 112.625122], {
-            icon: icon_rumah
-        }).addTo(mymap)
-        .bindPopup("Nama Karyawan: <b>Fulan</b><br />" +
-            "Alamat: Jl. Soekarno Hatta No. 1<br />" +
-            "Kota atau Kabupaten: Malang<br />" +
-            "Kecamatan: Mojolangu<br />" +
-            "Keteragan: Rumah Sendiri");
-    L.marker([-7.947887, 112.624841], {
-            icon: icon_rumah
-        }).addTo(mymap)
-        .bindPopup("Nama Karyawan: <b>Aisyah</b><br />" +
-            "Alamat: Jl. Soekarno Hatta No. 2<br />" +
-            "Kota atau Kabupaten: Malang<br />" +
-            "Kecamatan: Lowokwaru<br />" +
-            "Keteragan: Rumah Kos");
-    L.marker([-7.948482, 112.612739], {
-            icon: icon_rumah
-        }).addTo(mymap)
-        .bindPopup("Nama Karyawan: <b>Melody</b><br />" +
-            "Alamat: Jl. Soekarno Hatta No. 3<br />" +
-            "Kota atau Kabupaten: Malang<br />" +
-            "Kecamatan: Lowokwaru<br />" +
-            "Keteragan: Rumah Saudara");
+    <?php foreach ($karyawan as $kw) : ?>
+        <?php foreach ($kota as $kt) : ?>
+            <?php foreach ($kecamatan as $kec) : ?>
+                L.marker([<?= $kw['latitude'] ?>, <?= $kw['longitude'] ?>], {
+                        icon: icon_rumah
+                    }).addTo(mymap)
+                    .bindPopup("Nama Karyawan: <b><?= $kw['nama'] ?></b><br />" +
+                        "Alamat: <b><?= $kw['alamat'] ?></b><br />" +
+                        "Kota atau Kabupaten: <b><?= $kt['nama_kt_kb'] ?></b><br />" +
+                        "Kecamatan: <b><?= $kec['nama_kecamatan'] ?></b><br />" +
+                        "Keteragan: <b><?= $kw['ket'] ?></b>");
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
 </script>
-
-<!-- <?php foreach ($karyawan as $kw) { ?>
-
-<?php } ?> -->
 
 <!-- datatable -->
 <script>

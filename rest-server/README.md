@@ -9,57 +9,43 @@ Laravel Lumen is a stunningly fast PHP micro-framework for building web applicat
 
 # 🍁 END POINTNYA GAN
 
-## 🍂 Cara install:
+### 🍂 Cara Install:
 1. Run command `composer install`.
 2. Create database, type `simakar` and then import db [`simakar.sql`](../simakar.sql) without check forign key.
-3. Run command `cp .env.example .env` and then configure it on .env file.
-4. Run server `php -S localhost:8000 -t public`, **if using localhost: 8000**.
+3. Run command `cp .env.example .env` and then configure it on `.env` file.
+4. Cd into `rest-server` folder, and then run server `php -S localhost:8000 -t public`.
 
-## 🍃 Akses CRUD:
-~ update, delete, detail: tambah parameter id diakhir endpoint `localhost:8000/karyawan/1` atau `localhost/simakar-ci/rest-server/public/karyawan/1`.
+### 🍃 Akses CRUD:
+~ update, delete, detail: tambah parameter `id` diakhir endpoint `localhost:8000/karyawan/1`.
     
 
 ### 💸 gaji
 
     localhost:8000/gaji
-    atau
-    localhost/simakar-ci/rest-server/public/gaji
 
-### 👔 karyawan
+### :lab_coat: karyawan
 
     localhost:8000/karyawan
-    atau
-    localhost/simakar-ci/rest-server/public/karyawan
 
 ### 🌇 kota atau kabupaten
 
     localhost:8000/kota
-    atau
-    localhost/simakar-ci/rest-server/public/kota
     
 ### 🏯 divisi
 
     localhost:8000/divisi
-    atau
-    localhost/simakar-ci/rest-server/public/divisi
     
 ### 🗼 jabatan
 
     localhost:8000/jabatan
-    atau
-    localhost/simakar-ci/rest-server/public/jabatan
     
 ### ⛩️ kecamatan
 
     localhost:8000/kecamatan
-    atau
-    localhost/simakar-ci/rest-server/public/kecamatan
     
 ### 🗾 provinsi
 
     localhost:8000/provinsi
-    atau
-    localhost/simakar-ci/rest-server/public/provinsi
     
 ## Contributing
 

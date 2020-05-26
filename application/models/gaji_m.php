@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
-class gaji_m extends CI_Model 
+class gaji_m extends CI_Model
 {
     private $_client;
 
@@ -28,15 +28,15 @@ class gaji_m extends CI_Model
 
     public function getGajiById($id)
     {
-        $response = $this->_client->request('GET', 'gaji/'.$id);
+        $response = $this->_client->request('GET', 'gaji/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addGaji()
     {
         $data = [
-            'nama'          =>  $this->input->post('nama', true),
+            'jumlah_gaji'          =>  $this->input->post('jumlah_gaji', true),
         ];
 
         $response = $this->_client->request('POST', 'gaji', [
@@ -47,13 +47,13 @@ class gaji_m extends CI_Model
         return $result;
     }
 
-    public function updateGaji()
+    public function updateGaji($id)
     {
         $data = [
-            'nama'          =>  $this->input->post('nama', true),
+            'jumlah_gaji'          =>  $this->input->post('jumlah_gaji', true),
         ];
 
-        $response = $this->_client->request('PUT', 'gaji', [
+        $response = $this->_client->request('PUT', 'gaji/' . $id, [
             'form_params' => $data
         ]);
 
@@ -63,7 +63,7 @@ class gaji_m extends CI_Model
 
     public function deleteGaji($id)
     {
-        $response = $this->_client->request('DELETE', 'gaji/'.$id);
+        $response = $this->_client->request('DELETE', 'gaji/' . $id);
         $result = json_decode($response->getBody(), true);
         return $result;
     }

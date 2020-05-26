@@ -1,9 +1,10 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
+
 use GuzzleHttp\Client;
 
-class kecamatan_m extends CI_Model 
+class kecamatan_m extends CI_Model
 {
     private $_client;
 
@@ -25,15 +26,15 @@ class kecamatan_m extends CI_Model
 
     public function getKecamatanById($id)
     {
-        $response = $this->_client->request('GET', 'kecamatan/'.$id);
+        $response = $this->_client->request('GET', 'kecamatan/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addKecamatan()
     {
         $data = [
-           
+            'nama_kecamatan'          =>  $this->input->post('nama_kecamatan', true),
         ];
 
         $response = $this->_client->request('POST', 'kecamatan', [
@@ -44,13 +45,13 @@ class kecamatan_m extends CI_Model
         return $result;
     }
 
-    public function updateKecamatan()
+    public function updateKecamatan($id)
     {
         $data = [
-            
+            'nama_kecamatan'          =>  $this->input->post('nama_kecamatan', true),
         ];
 
-        $response = $this->_client->request('PUT', 'kecamatan', [
+        $response = $this->_client->request('PUT', 'kecamatan/' . $id, [
             'form_params' => $data
         ]);
 
@@ -60,7 +61,7 @@ class kecamatan_m extends CI_Model
 
     public function deleteKecamatan($id)
     {
-        $response = $this->_client->request('DELETE', 'kecamatan/'.$id);
+        $response = $this->_client->request('DELETE', 'kecamatan/' . $id);
         $result = json_decode($response->getBody(), true);
         return $result;
     }

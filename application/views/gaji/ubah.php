@@ -19,12 +19,12 @@
                         <h4>Form Ubah Data Gaji</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= base_url('gaji/ubah_simpan/') ?><?= $gaji['id'] ?>" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Jumlah Gaji</label>
-                                        <input type="number" name="jumlah_gaji" value="<?= set_value('jumlah_gaji') ?>" class="form-control">
+                                        <input type="number" name="jumlah_gaji" value="<?= $gaji['jumlah_gaji'] ?>" class="form-control">
                                         <?= form_error('jumlah_gaji', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

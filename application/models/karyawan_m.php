@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 class karyawan_m extends CI_Model
 {
-   
+
     private $_client;
 
     public function __construct()
@@ -29,9 +29,9 @@ class karyawan_m extends CI_Model
 
     public function getKaryawanById($id)
     {
-        $response = $this->_client->request('GET', 'karyawan/'.$id);
+        $response = $this->_client->request('GET', 'karyawan/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addKaryawan()
@@ -42,8 +42,8 @@ class karyawan_m extends CI_Model
             'no_hp'         =>  $this->input->post('no_hp', true),
             'alamat'        =>  $this->input->post('alamat', true),
             'gender'        =>  $this->input->post('gender', true),
-            'tanggal_masuk' =>  $this->input->post('tanggal_masuk',true),
-            'tanggal_lahir' =>  $this->input->post('tanggal_lahir',true),
+            'tanggal_masuk' =>  $this->input->post('tanggal_masuk', true),
+            'tanggal_lahir' =>  $this->input->post('tanggal_lahir', true),
             'id_jabatan'    =>  $this->input->post('id_jabatan', true),
             'id_provinsi'   =>  $this->input->post('id_provinsi'),
             'id_kecamatan'  =>  $this->input->post('id_kecamatan'),
@@ -90,7 +90,7 @@ class karyawan_m extends CI_Model
             'ket'           =>  $this->input->post('ket'),
         ];
 
-        $response = $this->_client->request('PUT', 'karyawan/'.$id, [
+        $response = $this->_client->request('PUT', 'karyawan/' . $id, [
             'form_params' => $data
         ]);
 
@@ -100,7 +100,7 @@ class karyawan_m extends CI_Model
 
     public function deleteKaryawan($id)
     {
-        $response = $this->_client->request('DELETE', 'karyawan/'.$id);
+        $response = $this->_client->request('DELETE', 'karyawan/' . $id);
         $result = json_decode($response->getBody(), true);
         return $result;
     }
