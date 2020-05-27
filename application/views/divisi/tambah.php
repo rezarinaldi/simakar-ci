@@ -19,7 +19,7 @@
                         <h4>Form Tambah Data Divisi</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= base_url('divisi/tambah_simpan/') ?>" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

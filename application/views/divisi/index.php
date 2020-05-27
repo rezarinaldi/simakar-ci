@@ -35,21 +35,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $no = 1;
-                                    ?>
+                                    <?php $no = 1; ?>
+                                    <?php foreach($divisi as $dv): ?>
                                     <tr align="center">
-                                        <td><?= $no++ ?></td>
-                                        <td>
-
+                                        <td><?= $no ?></td>
+                                        <td><?= $dv['nama_divisi']; ?></td>
+                                        <td><?php 
+                                                $create = substr($dv['created_at'], 0, 10);
+                                                echo longdate_indo($create);
+                                            ?>
                                         </td>
-                                        <td></td>
-                                        <td></td>
                                         <td>
-                                            <a href="<?= base_url('divisi/ubah/') ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
-                                            <a href="<?= base_url('divisi/hapus/') ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
+                                            <?php 
+                                                $update = substr($dv['updated_at'], 0, 10);
+                                                echo longdate_indo($update);
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?= base_url('divisi/ubah/')?><?=$dv['id']?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
+                                            <a href="<?= base_url('divisi/hapus/') ?><?=$dv['id']?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
                                         </td>
                                     </tr>
+                                    <?php $no++;endforeach; ?>
 
                                 </tbody>
                             </table>

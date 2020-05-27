@@ -19,12 +19,12 @@
                         <h4>Form Ubah Data Divisi</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= base_url('divisi/ubah_simpan/') ?><?= $divisi['id'] ?>" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Divisi</label>
-                                        <input type="text" name="nama_divisi" value="<?= set_value('nama_divisi') ?>" class="form-control">
+                                        <input type="text" name="nama_divisi" value="<?= $divisi['nama_divisi'] ?>" class="form-control">
                                         <?= form_error('nama_divisi', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

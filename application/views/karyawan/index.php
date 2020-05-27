@@ -43,8 +43,8 @@
                                         <tr align="center">
                                             <td><?= $no++ ?></td>
                                             <td>
-                                                <a href="<?= base_url() . 'assets/upload/' . $kw['gambar'] ?>">
-                                                    <img width="35px" height="35px" src="<?= base_url() . 'assets/upload/' . $kw['gambar'] ?>">
+                                                <a href="<?= base_url('assets/img/avatar/').$kw['gambar']?>">
+                                                    <img width="35px" height="35px" src="<?= base_url('assets/img/avatar/').$kw['gambar']?>">
                                                 </a>
                                             </td>
                                             <td><?= $kw['nama'] ?></td>

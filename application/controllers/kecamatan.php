@@ -7,6 +7,7 @@ class kecamatan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Data_model','data');
         check_not_login();
     }
 

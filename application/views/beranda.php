@@ -35,18 +35,18 @@
                     </div>
                     <div class="card-body" id="top-5-scroll">
                         <ul class="list-unstyled list-unstyled-border">
-                            <li class="media">
-                                <?php foreach ($karyawan as $kw) : ?>
-                                    <img class="mr-3 rounded-circle" width="50" src="<?= base_url() ?>/assets/img/avatar/avatar-0.png" alt="avatar">
+                            <?php foreach ($karyawan as $kw) : ?>
+                                <li class="media">
+                                    <img class="mr-3 rounded-circle" width="50" src="<?= base_url('assets/img/avatar/').$kw['gambar']?>" alt="avatar">
                                     <div class="media-body">
                                         <div class="float-right text-primary"><?= IndonesiaTgl($kw['tanggal_masuk']) ?></div>
                                         <div class="media-title"><?= $kw['nama'] ?></div>
-                                    <?php endforeach; ?>
-                                    <?php foreach ($jabatan as $jb) : ?>
-                                        <span class="text-small text-muted"><?= $jb['nama_jabatan'] ?></span>
-                                    <?php endforeach; ?>
+                                        <?php foreach ($jabatan as $jb) : ?>
+                                            <span class="text-small text-muted"><?= $jb['nama_jabatan'] ?></span>
+                                        <?php endforeach; ?>
                                     </div>
-                            </li>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                         <div class="text-center pt-1 pb-1">
                             <a href="<?= base_url('menu/karyawan') ?>" class="btn btn-sm btn-primary btn-round">

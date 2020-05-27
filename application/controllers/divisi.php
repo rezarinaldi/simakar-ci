@@ -7,12 +7,15 @@ class divisi extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Data_model','data');
+        
         check_not_login();
     }
 
     public function index()
     {
         $data['title'] = 'Divisi';
+        $data['divisi'] = $this->data->getAllDivisi();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -23,6 +26,7 @@ class divisi extends CI_Controller
     public function tambah()
     {
         $data['title'] = 'Divisi';
+        $data['divisi'] = $this->data->getAllDivisi();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -30,10 +34,10 @@ class divisi extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function ubah()
+    public function ubah($id)
     {
         $data['title'] = 'Divisi';
-
+        $data['divisi'] = $this->data->getDivisiById($id);
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('divisi/ubah', $data);
@@ -42,24 +46,22 @@ class divisi extends CI_Controller
 
     public function tambah_simpan()
     {
-
-
+        $this->data->addDivisi();
         $this->session->set_flashdata('pesan', 'Ditambahkan');
         redirect('divisi');
     }
 
-    public function ubah_simpan()
+    public function ubah_simpan($id)
     {
 
-
+        $this->data->updateDivisi($id);
         $this->session->set_flashdata('pesan', 'Diubah');
         redirect('divisi');
     }
 
-    public function hapus()
+    public function hapus($id)
     {
-        
-
+        $this->data->deleteDivisi($id);
         $this->session->set_flashdata('pesan', 'Dihapus');
         redirect('divisi');
     }

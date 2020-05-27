@@ -18,7 +18,7 @@
                             </i>
                         </div>
                         <div class="profile-widget-header">
-                            <img alt="image" src="<?= base_url() ?>/assets/img/avatar/avatar-1.png" class="rounded-circle profile-widget-picture">
+                            <img alt="image" src="<?= base_url('assets/img/avatar/').$karyawan['gambar']?>" class="rounded-circle profile-widget-picture">
                         </div>
 
                         <div class="profile-widget-description">
