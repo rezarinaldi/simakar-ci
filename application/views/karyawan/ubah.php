@@ -15,11 +15,11 @@
         <div class="row">
             <div class="col-10 col-md-4 col-lg-4">
                 <div class="card">
-                    <form action="<?= base_url('karyawan/ubah_simpan/') ?><?= $karyawan['id'] ?>" enctype="multipart/form-data" method="post">
-                        <div class="card-header">
-                            <h4>Form Ubah Data Karyawan</h4>
-                        </div>
-                        <div class="card-body">
+                    <div class="card-header">
+                        <h4>Form Ubah Data Karyawan</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="<?= base_url('karyawan/ubah_simpan/') ?><?= $karyawan['id'] ?>" enctype="multipart/form-data" method="post">
                             <div class="form-group">
                                 <label>Nama</label>
                                 <input type="text" name="nama" value="<?= $karyawan['nama'] ?>" class="form-control">
@@ -222,11 +222,11 @@
                                 <input type="file" name="gambar" value="<?= $karyawan['gambar'] ?>" class="form-control">
                             </div>
 
-                        </div>
-                        <div class="card-footer text-right">
-                            <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
-                            <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
-                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
+                        <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
+                    </div>
                     </form>
                 </div>
             </div>

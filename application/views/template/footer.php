@@ -81,11 +81,13 @@
     mymap.addLayer(marker);
 </script>
 
+<!-- curLocation = [<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>] -->
+
 <!-- leaflet ambil koordinat (ubah) -->
 <script type="text/javascript">
     var curLocation = [0, 0];
     if (curLocation[0] == 0 && curLocation[1] == 0) {
-        curLocation = [<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>];
+        curLocation = [-7.946263, 112.615548];
     }
     // Create a map
     var mymap = L.map('ubah').setView([-7.946263, 112.615548], 14);

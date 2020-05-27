@@ -51,14 +51,18 @@
                                             <td>
                                                 <!--tampilkan nama jabatan  -->
                                                 <?php foreach ($jabatan as $jb) : ?>
-                                                    <?= $jb['nama_jabatan']; ?>
+                                                    <?php if ($kw['id_jabatan'] == $jb['id']) : ?>
+                                                        <?= $jb['nama_jabatan']; ?>
+                                                    <?php endif; ?>
                                                 <?php endforeach; ?>
                                                 <!-- end tampil nama jabatan  -->
                                             </td>
                                             <td>
                                                 <!--tampilkan nama divisi  -->
                                                 <?php foreach ($divisi as $dv) : ?>
-                                                    <?= $dv['nama_divisi']; ?>
+                                                    <?php if ($kw['id_divisi'] == $dv['id']) : ?>
+                                                        <?= $dv['nama_divisi']; ?>
+                                                    <?php endif; ?>
                                                 <?php endforeach; ?>
                                                 <!-- end tampil nama divisi  -->
                                             </td>

@@ -113,7 +113,7 @@
                                 <?php endif; ?>
                             </div>
                             <a href="<?= base_url('menu/karyawan') ?>" class="btn btn-warning"><i class="fas fa-reply"></i> Kembali</a>
-                            <a href="<?= base_url('karyawan/ubah/') . $karyawan['id'] ?>" class="btn btn-success ml-2 btnSubmit"><i class="fas fa-edit"></i> Ubah</a>
+                            <a href="<?= base_url('karyawan/ubah/') . $karyawan['id'] ?>" class="btn btn-success ml-2 btnSubmit"><i class="far fa-edit"></i> Ubah</a>
                         </div>
                     </div>
                 </div>

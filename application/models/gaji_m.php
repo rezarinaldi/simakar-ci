@@ -12,12 +12,11 @@ class gaji_m extends CI_Model
     {
         parent::__construct();
         $this->_client = new Client([
-            'base_uri' => 'http://localhost:8000/'
+            'base_uri' => 'http://simakar.000webhostapp.com/'
         ]);
     }
 
     ################################### MODEL DATA GAJI #############################################
-
 
     public function getAllGaji()
     {
@@ -30,7 +29,7 @@ class gaji_m extends CI_Model
     {
         $response = $this->_client->request('GET', 'gaji/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result;
+        return $result[0];
     }
 
     public function addGaji()

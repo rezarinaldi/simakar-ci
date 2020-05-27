@@ -13,16 +13,13 @@
         </div>
 
         <div class="row">
-
             <div class="col-4 col-md-4 col-lg-4">
                 <div class="card">
-
-                    <form action="<?= base_url('karyawan/tambah_simpan') ?>" enctype="multipart/form-data" method="post" class="needs-validation" novalidate="">
-                        <div class="card-header">
-                            <h4>Form Tambah Data Karyawan</h4>
-                        </div>
-                        <div class="card-body">
-
+                    <div class="card-header">
+                        <h4>Form Tambah Data Karyawan</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="<?= base_url('karyawan/tambah_simpan') ?>" enctype="multipart/form-data" method="post" class="needs-validation" novalidate="">
                             <div class="form-group">
                                 <label>Nama</label>
                                 <input type="text" name="nama" value="<?= set_value('karyawan') ?>" class="form-control" required="" autofocus>
@@ -204,11 +201,11 @@
                                     Gambar tidak boleh kosong
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer text-right">
-                            <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
-                            <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
-                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
+                        <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
+                    </div>
                     </form>
                 </div>
             </div>

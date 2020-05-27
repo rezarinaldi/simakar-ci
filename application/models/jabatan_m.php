@@ -6,14 +6,13 @@ use GuzzleHttp\Client;
 
 class jabatan_m extends CI_Model
 {
-
     private $_client;
 
     public function __construct()
     {
         parent::__construct();
         $this->_client = new Client([
-            'base_uri' => 'http://localhost:8000/'
+            'base_uri' => 'http://simakar.000webhostapp.com/'
         ]);
     }
     ################################### MODEL DATA JABATAN #############################################
@@ -29,7 +28,7 @@ class jabatan_m extends CI_Model
     {
         $response = $this->_client->request('GET', 'jabatan/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result;
+        return $result[0];
     }
 
     public function addJabatan()

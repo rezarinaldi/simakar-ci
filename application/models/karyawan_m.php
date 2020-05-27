@@ -6,19 +6,17 @@ use GuzzleHttp\Client;
 
 class karyawan_m extends CI_Model
 {
-
     private $_client;
 
     public function __construct()
     {
         parent::__construct();
         $this->_client = new Client([
-            'base_uri' => 'http://localhost:8000/'
+            'base_uri' => 'http://simakar.000webhostapp.com/'
         ]);
     }
 
     ################################### MODEL DATA KARYAWAN #############################################
-
 
     public function getAllKaryawan()
     {
@@ -31,7 +29,7 @@ class karyawan_m extends CI_Model
     {
         $response = $this->_client->request('GET', 'karyawan/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result;
+        return $result[0];
     }
 
     public function addKaryawan()
@@ -56,8 +54,6 @@ class karyawan_m extends CI_Model
             'longitude'     =>  $this->input->post('longitude'),
             'ket'           =>  $this->input->post('ket'),
         ];
-
-        // var_dump($data);die();
 
         $response = $this->_client->request('POST', 'karyawan', [
             'form_params' => $data
