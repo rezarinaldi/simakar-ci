@@ -14,7 +14,7 @@ class gaji extends CI_Controller
     public function index()
     {
         $data['title'] = 'Gaji';
-        $data['gaji'] = $this->gaji_m->getAllGaji();
+        $data['gaji'] = $this->data->getAllGaji();
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -35,7 +35,7 @@ class gaji extends CI_Controller
     public function ubah($id)
     {
         $data['title'] = 'Gaji';
-        $data['gaji'] = $this->gaji_m->getGajiById($id);
+        $data['gaji'] = $this->data->getGajiById($id);
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -45,21 +45,21 @@ class gaji extends CI_Controller
 
     public function tambah_simpan()
     {
-        $this->gaji_m->addGaji();
+        $this->data->addGaji();
         $this->session->set_flashdata('pesan', 'Ditambahkan');
         redirect('gaji');
     }
 
     public function ubah_simpan($id)
     {
-        $this->gaji_m->updateGaji($id);
+        $this->data->updateGaji($id);
         $this->session->set_flashdata('pesan', 'Diubah');
         redirect('gaji');
     }
 
     public function hapus($id)
     {
-        $this->gaji_m->deleteGaji($id);
+        $this->data->deleteGaji($id);
         $this->session->set_flashdata('pesan', 'Dihapus');
         redirect('gaji');
     }
