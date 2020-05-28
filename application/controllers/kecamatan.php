@@ -14,7 +14,7 @@ class kecamatan extends CI_Controller
     public function index()
     {
         $data['title'] = 'Kecamatan';
-
+        $data['kecamatan'] = $this->data->getAllKecamatan();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('kecamatan/index', $data);
@@ -31,9 +31,10 @@ class kecamatan extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function ubah()
+    public function ubah($id)
     {
         $data['title'] = 'Kecamatan';
+        $data['kecamatan'] = $this->data->getKecamatanById($id);
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -43,24 +44,21 @@ class kecamatan extends CI_Controller
 
     public function tambah_simpan()
     {
-
-
+        $data['kecamatan'] = $this->data->addKecamatan();
         $this->session->set_flashdata('pesan', 'Ditambahkan');
         redirect('kecamatan');
     }
 
-    public function ubah_simpan()
+    public function ubah_simpan($id)
     {
-
-
+        $data['kecamatan'] = $this->data->updateKecamatan($id);
         $this->session->set_flashdata('pesan', 'Diubah');
         redirect('kecamatan');
     }
 
-    public function hapus()
+    public function hapus($id)
     {
-        
-
+        $data['kecamatan'] = $this->data->deleteKecamatan($id);
         $this->session->set_flashdata('pesan', 'Dihapus');
         redirect('kecamatan');
     }

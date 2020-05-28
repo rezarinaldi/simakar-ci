@@ -19,12 +19,12 @@
                         <h4>Form Ubah Data Kecamatan</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= base_url('kecamatan/ubah_simpan/') ?><?= $kecamatan['id'] ?>" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Kecamatan</label>
-                                        <input type="text" name="nama_kecamatan" value="<?= set_value('nama_kecamatan') ?>" class="form-control">
+                                        <input type="text" name="nama_kecamatan" value="<?= $kecamatan['nama_kecamatan'] ?>" class="form-control">
                                         <?= form_error('nama_kecamatan', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

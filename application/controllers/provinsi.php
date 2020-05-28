@@ -14,7 +14,7 @@ class provinsi extends CI_Controller
     public function index()
     {
         $data['title'] = 'Provinsi';
-
+        $data['provinsi'] = $this->data->getAllProvinsi();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('provinsi/index', $data);
@@ -31,9 +31,10 @@ class provinsi extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function ubah()
+    public function ubah($id)
     {
         $data['title'] = 'Provinsi';
+        $data['provinsi'] = $this->data->getProvinsiById($id);
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -43,24 +44,21 @@ class provinsi extends CI_Controller
 
     public function tambah_simpan()
     {
-
-
+        $data['provinsi'] = $this->data->addProvinsi();
         $this->session->set_flashdata('pesan', 'Ditambahkan');
         redirect('provinsi');
     }
 
-    public function ubah_simpan()
+    public function ubah_simpan($id)
     {
-
-
+        $data['provinsi'] = $this->data->updateProvinsi($id);
         $this->session->set_flashdata('pesan', 'Diubah');
         redirect('provinsi');
     }
 
-    public function hapus()
+    public function hapus($id)
     {
-        
-
+        $data['provinsi'] = $this->data->deleteProvinsi($id);
         $this->session->set_flashdata('pesan', 'Dihapus');
         redirect('provinsi');
     }

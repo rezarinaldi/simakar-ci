@@ -14,7 +14,7 @@ class kt_kb extends CI_Controller
     public function index()
     {
         $data['title'] = 'Kota dan Kabupaten';
-
+        $data['kota'] = $this->data->getAllKota();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
         $this->load->view('kt_kb/index', $data);
@@ -31,9 +31,10 @@ class kt_kb extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function ubah()
+    public function ubah($id)
     {
         $data['title'] = 'Kota dan Kabupaten';
+        $data['kota'] = $this->data->getKotaById($id);
 
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar', $data);
@@ -44,22 +45,23 @@ class kt_kb extends CI_Controller
     public function tambah_simpan()
     {
 
+        $data['kota'] = $this->data->addKota();
 
         $this->session->set_flashdata('pesan', 'Ditambahkan');
         redirect('kt_kb');
     }
 
-    public function ubah_simpan()
+    public function ubah_simpan($id)
     {
-
-
+        $data['kota'] = $this->data->updateKota($id);
         $this->session->set_flashdata('pesan', 'Diubah');
         redirect('kt_kb');
     }
 
-    public function hapus()
+    public function hapus($id)
     {
         
+        $data['kota'] = $this->data->deleteKota($id);
 
         $this->session->set_flashdata('pesan', 'Dihapus');
         redirect('kt_kb');

@@ -292,7 +292,7 @@ class Data_model extends CI_Model
     {
         $response = $this->_client->request('GET', 'kecamatan/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addKecamatan()
@@ -343,7 +343,7 @@ class Data_model extends CI_Model
     {
         $response = $this->_client->request('GET', 'kota/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addKota()
@@ -396,7 +396,7 @@ class Data_model extends CI_Model
     {
         $response = $this->_client->request('GET', 'provinsi/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addProvinsi()

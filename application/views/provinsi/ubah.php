@@ -19,12 +19,12 @@
                         <h4>Form Ubah Data Provinsi</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= base_url('provinsi/ubah_simpan/') ?><?= $provinsi['id'] ?>" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Provinsi</label>
-                                        <input type="text" name="nama_provinsi" value="<?= set_value('nama_provinsi') ?>" class="form-control">
+                                        <input type="text" name="nama_provinsi" value="<?= $provinsi['nama_provinsi'] ?>" class="form-control">
                                         <?= form_error('nama_provinsi', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>
