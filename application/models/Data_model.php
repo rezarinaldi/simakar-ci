@@ -241,7 +241,7 @@ class Data_model extends CI_Model
     {
         $response = $this->_client->request('GET', 'jabatan/' . $id);
         $result = json_decode($response->getBody(), true);
-        return $result[0];
+        return $result;
     }
 
     public function addJabatan()

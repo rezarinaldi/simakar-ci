@@ -24,7 +24,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Jabatan</label>
-                                        <input type="text" name="nama_jabatan" value="<?= set_value('nama_jabatan') ?>" class="form-control">
+                                        <input type="text" name="nama_jabatan" value="<?= $jabatan['nama_jabatan'] ?>" class="form-control">
                                         <?= form_error('nama_jabatan', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

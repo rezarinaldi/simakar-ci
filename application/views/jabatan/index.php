@@ -35,22 +35,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $no = 1;
-                                    ?>
+                                <?php $no = 1; ?>
+                                    <?php foreach($jabatan as $jb): ?>
                                     <tr align="center">
-                                        <td><?= $no++ ?></td>
-                                        <td>
-
+                                        <td><?= $no ?></td>
+                                        <td><?= $jb['nama_jabatan']; ?></td>
+                                        <td><?php 
+                                                $create = substr($jb['created_at'], 0, 10);
+                                                echo longdate_indo($create);
+                                            ?>
                                         </td>
-                                        <td></td>
-                                        <td></td>
                                         <td>
-                                            <a href="<?= base_url('jabatan/ubah/') ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
-                                            <a href="<?= base_url('jabatan/hapus/') ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
+                                            <?php 
+                                                $update = substr($jb['updated_at'], 0, 10);
+                                                echo longdate_indo($update);
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?= base_url('jabatan/ubah/')?><?=$jb['id']?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
+                                            <a href="<?= base_url('jabatan/hapus/') ?><?=$jb['id']?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
                                         </td>
                                     </tr>
-
+                                    <?php $no++;endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
