@@ -37,12 +37,14 @@
                         <ul class="list-unstyled list-unstyled-border">
                             <?php foreach ($karyawan as $kw) : ?>
                                 <li class="media">
-                                    <img class="mr-3 rounded-circle" width="50" src="<?= base_url('assets/img/avatar/').$kw['gambar']?>" alt="avatar">
+                                    <img class="mr-3 rounded-circle" width="50" src="<?= base_url('assets/img/avatar/') . $kw['gambar'] ?>" alt="avatar">
                                     <div class="media-body">
                                         <div class="float-right text-primary"><?= IndonesiaTgl($kw['tanggal_masuk']) ?></div>
                                         <div class="media-title"><?= $kw['nama'] ?></div>
                                         <?php foreach ($jabatan as $jb) : ?>
-                                            <span class="text-small text-muted"><?= $jb['nama_jabatan'] ?></span>
+                                            <?php if ($kw['id_jabatan'] == $jb['id']) : ?>
+                                                <span class="text-small text-muted"><?= $jb['nama_jabatan'] ?></span>
+                                            <?php endif; ?>
                                         <?php endforeach; ?>
                                     </div>
                                 </li>
