@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Kode Pos</label>
-                                        <input type="number" name="kode_pos" value="<?= $kota['kode_pos'] ?>" class="form-control">
+                                        <input type="text" name="kode_pos" value="<?= $kota['kode_pos'] ?>" class="form-control">
                                         <?= form_error('kode_pos', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

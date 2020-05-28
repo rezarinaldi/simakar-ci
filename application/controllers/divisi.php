@@ -53,7 +53,6 @@ class divisi extends CI_Controller
 
     public function ubah_simpan($id)
     {
-
         $this->data->updateDivisi($id);
         $this->session->set_flashdata('pesan', 'Diubah');
         redirect('divisi');

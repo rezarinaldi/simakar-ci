@@ -36,20 +36,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $no = 1;
-                                    foreach ($gaji as $g) : ?>
+                                    <?php $no = 1; ?>
+                                    <?php foreach ($gaji as $g) : ?>
                                         <tr align="center">
-                                            <td><?= $no++ ?></td>
+                                            <td><?= $no ?></td>
                                             <td><?= format_rupiah($g['jumlah_gaji']) ?></td>
-                                            <td><?= IndonesiaTgl($g['created_at']) ?></td>
-                                            <td><?= IndonesiaTgl($g['updated_at']) ?></td>
+                                            <td><?php
+                                                $create = substr($g['created_at'], 0, 10);
+                                                echo longdate_indo($create);
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                $update = substr($g['updated_at'], 0, 10);
+                                                echo longdate_indo($update);
+                                                ?>
+                                            </td>
                                             <td>
                                                 <a href="<?= base_url('gaji/ubah/') . $g['id'] ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
                                                 <a href="<?= base_url('gaji/hapus/') . $g['id'] ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++;
+                                    endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

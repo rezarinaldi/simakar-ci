@@ -48,25 +48,21 @@ class karyawan extends CI_Controller
     {
         // UPLOAD GAMBAR
         $upload = $_FILES['gambar']['name'];
-        
+
         if ($upload) {
             # code...
             $config['upload_path'] = './assets/img/avatar/';
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size']     = '2048';
             $config['overwrite']     = TRUE;
-            
+
             $this->load->library('upload', $config);
-            
-            if ( $this->upload->do_upload('gambar'))
-            {
+
+            if ($this->upload->do_upload('gambar')) {
                 $newImage = $this->upload->data('file_name');
-                // echo $this->db->set('gambar', $newImage);
-            }
-            else
-            {
+            } else {
                 $this->session->set_flashdata('flash-error', "Periksa kembali file yang Anda upload");
-                redirect('karyawan/tambah');     
+                redirect('karyawan/tambah');
             }
         }
         $this->data->addKaryawan();
@@ -75,34 +71,29 @@ class karyawan extends CI_Controller
     }
 
     public function ubah_simpan($id)
-    {   
+    {
         $data = $this->data->getKaryawanById($id);
-        // var_dump($data['gambar']);die();
         $upload = $_FILES['gambar']['name'];
         if ($upload) {
             # code...
             $config['upload_path'] = './assets/img/avatar/';
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size']     = '2048';
             $config['overwrite']     = TRUE;
-            
+
             $this->load->library('upload', $config);
-            
-            if ( $this->upload->do_upload('gambar'))
-            {
-                
+
+            if ($this->upload->do_upload('gambar')) {
                 $oldImage = $data['gambar'];
                 if ($oldImage != 'avatar-1.png') {
                     # code...
                     unlink(FCPATH . 'assets/img/avatar/' . $oldImage);
                 }
-                
+
                 $newImage = $this->upload->data('file_name');
-            }
-            else
-            {
+            } else {
                 $this->session->set_flashdata('flash-error', "Periksa kembali file yang Anda upload");
-                redirect('karyawan/ubah');     
+                redirect('karyawan/ubah');
             }
         }
 

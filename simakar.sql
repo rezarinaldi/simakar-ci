@@ -27,13 +27,13 @@ CREATE TABLE `divisi`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of divisi
 -- ----------------------------
 INSERT INTO `divisi` VALUES (1, 'Manajer', '2020-05-17 21:54:15', '2020-05-28 00:35:20');
-INSERT INTO `divisi` VALUES (3, 'Keuangan', '2020-05-28 00:38:58', '2020-05-28 00:38:58');
+INSERT INTO `divisi` VALUES (2, 'Keuangan', '2020-05-28 00:38:58', '2020-05-28 00:38:58');
 
 -- ----------------------------
 -- Table structure for gaji
@@ -45,13 +45,14 @@ CREATE TABLE `gaji`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of gaji
 -- ----------------------------
 INSERT INTO `gaji` VALUES (1, 10000000, '2020-05-18 10:12:53', '2020-05-18 12:01:05');
 INSERT INTO `gaji` VALUES (2, 8000000, '2020-05-18 12:00:00', '2020-05-18 12:00:00');
+INSERT INTO `gaji` VALUES (3, 15000000, '2020-05-28 06:23:51', '2020-05-28 06:23:51');
 
 -- ----------------------------
 -- Table structure for jabatan
@@ -109,14 +110,15 @@ CREATE TABLE `karyawan`  (
   CONSTRAINT `fkKecamatan` FOREIGN KEY (`id_kecamatan`) REFERENCES `kecamatan` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fkKtKb` FOREIGN KEY (`id_kt_kb`) REFERENCES `kt_kb` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fkProvinsi` FOREIGN KEY (`id_provinsi`) REFERENCES `provinsi` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of karyawan
 -- ----------------------------
-INSERT INTO `karyawan` VALUES (1, 'Masbro', 'masbro@gmail.com', '08762738281', 'Jl. Kalimas', 'Wanita', '2020-08-10', '1999-06-12', 1, 1, 1, 1, 1, 1, 22, 'pasbiru.jpg', '', '', '', '2020-05-18 13:50:42', '2020-05-28 00:06:45');
-INSERT INTO `karyawan` VALUES (10, 'maryati abcd', 'ismail_nurudin@yahoo.com', '85231634076', 'sadf', 'Wanita', '2020-05-14', '2020-05-15', 1, 1, 1, 1, 1, 1, 22, 'd42.png', '-7.962422462359967', '112.6167291725231', 'sadf', '2020-05-27 23:42:12', '2020-05-27 23:42:12');
-INSERT INTO `karyawan` VALUES (11, 'teste', 'asubakekok@gmail.com', '085231634078', 'sadaf', 'Wanita', '2020-05-25', '2020-05-14', 1, 1, 1, 1, 1, 1, 22, 'avatar-1.png', '-7.947801650130512', '112.6166433821064', 'asdf', '2020-05-27 23:53:05', '2020-05-28 00:03:35');
+INSERT INTO `karyawan` VALUES (1, 'Masbro', 'masbro@gmail.com', '087627382819', 'Jl. Kumis Kucing No. 15', 'Pria', '2020-08-10', '1999-06-12', 1, 1, 1, 1, 1, 1, 22, 'pasbiru.jpg', '-7.951058438677533', '112.62014130216436', 'Rumah Kontrakan', '2020-05-18 06:50:42', '2020-05-28 04:37:07');
+INSERT INTO `karyawan` VALUES (2, 'Maryati', 'maryati@rocketmail.com', '085231634076', 'sadf', 'Wanita', '2020-05-14', '2020-05-15', 1, 1, 1, 1, 1, 1, 22, 'avatar-5.png', '-7.962422462359967', '112.6167291725231', 'sadf', '2020-05-27 16:42:12', '2020-05-28 05:59:04');
+INSERT INTO `karyawan` VALUES (3, 'teste', 'ismail_nurudin@yahoo.com', '085231634078', 'sadaf', 'Pria', '2020-05-25', '2020-05-14', 1, 1, 1, 1, 1, 1, 21, 'avatar-1.png', '-7.947801650130512', '112.6166433821064', 'asdf', '2020-05-27 16:53:05', '2020-05-27 17:03:35');
+INSERT INTO `karyawan` VALUES (4, 'Reza', 'rezarinaldi@gmail.com', '085899778409', 'Perum Mangliawan Permai', 'Pria', '2020-05-28', '2000-04-25', 1, 1, 2, 2, 2, 2, 20, 'default-avatar.png', '-7.950086186402067', '112.66889887072182', 'Rumah Saudara', '2020-05-28 04:29:09', '2020-05-28 06:26:00');
 
 -- ----------------------------
 -- Table structure for kecamatan
@@ -128,12 +130,13 @@ CREATE TABLE `kecamatan`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of kecamatan
 -- ----------------------------
 INSERT INTO `kecamatan` VALUES (1, 'Kademangan', '2020-05-18 10:28:28', '2020-05-18 10:28:28');
+INSERT INTO `kecamatan` VALUES (2, 'Pakis', '2020-05-28 06:25:02', '2020-05-28 06:25:02');
 
 -- ----------------------------
 -- Table structure for kt_kb
@@ -146,12 +149,13 @@ CREATE TABLE `kt_kb`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of kt_kb
 -- ----------------------------
-INSERT INTO `kt_kb` VALUES (1, 'Kota Probolinggo ', 17823, '2020-05-18 10:16:00', '2020-05-18 10:16:00');
+INSERT INTO `kt_kb` VALUES (1, 'Kota Probolinggo', 17823, '2020-05-18 10:16:00', '2020-05-18 10:16:00');
+INSERT INTO `kt_kb` VALUES (2, 'Kabupaten Malang', 65154, '2020-05-28 06:24:50', '2020-05-28 06:24:50');
 
 -- ----------------------------
 -- Table structure for provinsi

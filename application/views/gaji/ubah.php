@@ -24,7 +24,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Jumlah Gaji</label>
-                                        <input type="number" name="jumlah_gaji" value="<?= $gaji['jumlah_gaji'] ?>" class="form-control">
+                                        <input type="text" name="jumlah_gaji" value="<?= $gaji['jumlah_gaji'] ?>" class="form-control">
                                         <?= form_error('jumlah_gaji', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
                                 </div>

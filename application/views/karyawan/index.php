@@ -37,14 +37,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $no = 1;
-                                    foreach ($karyawan as $kw) : ?>
+                                    <?php $no = 1; ?>
+                                    <?php foreach ($karyawan as $kw) : ?>
                                         <tr align="center">
-                                            <td><?= $no++ ?></td>
+                                            <td><?= $no ?></td>
                                             <td>
-                                                <a href="<?= base_url('assets/img/avatar/').$kw['gambar']?>">
-                                                    <img width="35px" height="35px" src="<?= base_url('assets/img/avatar/').$kw['gambar']?>">
+                                                <a href="<?= base_url('assets/img/avatar/') . $kw['gambar'] ?>">
+                                                    <img width="35px" height="35px" src="<?= base_url('assets/img/avatar/') . $kw['gambar'] ?>">
                                                 </a>
                                             </td>
                                             <td><?= $kw['nama'] ?></td>
@@ -73,7 +72,8 @@
                                                 <a href="<?= base_url('karyawan/hapus/') . $kw['id'] ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php $no++;
+                                    endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

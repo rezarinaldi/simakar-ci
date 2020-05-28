@@ -18,8 +18,8 @@
                     <div class="card-header">
                         <h4>Form Ubah Data Karyawan</h4>
                     </div>
-                    <div class="card-body">
-                        <form action="<?= base_url('karyawan/ubah_simpan/') ?><?= $karyawan['id'] ?>" enctype="multipart/form-data" method="post">
+                    <form action="<?= base_url('karyawan/ubah_simpan/') ?><?= $karyawan['id'] ?>" enctype="multipart/form-data" method="post">
+                        <div class="card-body">
                             <div class="form-group">
                                 <label>Nama</label>
                                 <input type="text" name="nama" value="<?= $karyawan['nama'] ?>" class="form-control">
@@ -28,38 +28,36 @@
 
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
-
-                                <!-- <?php if ($karyawan['gender'] == "pria") : ?> -->
+                                <!-- <?php if ($karyawan['gender'] == "Pria") : ?> -->
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="pria" name="gender" class="custom-control-input" value="pria" checked>
-                                    <label class="custom-control-label" for="pria">pria</label>
+                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria" checked>
+                                    <label class="custom-control-label" for="Pria">Pria</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="wanita" name="gender" class="custom-control-input" value="wanita">
-                                    <label class="custom-control-label" for="wanita">wanita</label>
+                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita">
+                                    <label class="custom-control-label" for="Wanita">Wanita</label>
                                 </div>
                                 <!-- <?php else : ?> -->
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="pria" name="gender" class="custom-control-input" value="pria">
-                                    <label class="custom-control-label" for="pria">pria</label>
+                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria">
+                                    <label class="custom-control-label" for="Pria">Pria</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="wanita" name="gender" class="custom-control-input" value="wanita" checked>
-                                    <label class="custom-control-label" for="wanita">wanita</label>
+                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita" checked>
+                                    <label class="custom-control-label" for="Wanita">Wanita</label>
                                 </div>
                                 <!-- <?php endif; ?> -->
-
                                 <?= form_error('gender', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
 
                             <div class="form-group">
                                 <label>Umur</label>
-                                <input type="number" name="umur" value="<?= $karyawan['umur'] ?>" class="form-control" required="">
+                                <input type="text" name="umur" value="<?= $karyawan['umur'] ?>" class="form-control" required="">
                             </div>
 
                             <div class="form-group">
                                 <label>No. HP</label>
-                                <input type="number" name="no_hp" value="<?= $karyawan['no_hp'] ?>" class="form-control" required="">
+                                <input type="text" name="no_hp" value="<?= $karyawan['no_hp'] ?>" class="form-control" required="">
                             </div>
 
                             <div class="form-group">
@@ -118,6 +116,7 @@
                                     <?php foreach ($provinsi as $provinsi) : ?>
                                         <option value="<?= $provinsi['id'] ?>"><?= $provinsi['nama_provinsi'] ?></option>
                                     <?php endforeach; ?>
+                                    
                                 </select>
                                 <?= form_error('id_provinsi', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
@@ -208,9 +207,11 @@
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     </option>
+
                                     <?php foreach ($gaji as $gaji) : ?>
                                         <option value="<?= $gaji['id'] ?>"><?= $gaji['jumlah_gaji'] ?></option>
                                     <?php endforeach; ?>
+
                                 </select>
                                 <?= form_error('id_gaji', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
@@ -218,15 +219,16 @@
                             <div class="form-group">
                                 <label>Gambar</label>
                                 <br>
-                                <img src="">
+                                <a href="<?= base_url('assets/img/avatar/') . $karyawan['gambar'] ?>">
+                                    <img class="mb-3" width="100px" src="<?= base_url('assets/img/avatar/') . $karyawan['gambar'] ?>">
+                                </a>
                                 <input type="file" name="gambar" value="<?= $karyawan['gambar'] ?>" class="form-control">
                             </div>
-
-                    </div>
-                    <div class="card-footer text-right">
-                        <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
-                        <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
-                    </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
+                            <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
+                        </div>
                     </form>
                 </div>
             </div>

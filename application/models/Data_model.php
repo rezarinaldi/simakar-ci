@@ -35,7 +35,7 @@ class Data_model extends CI_Model
     public function addKaryawan()
     {
         $img = $_FILES['gambar']['name'];
-        if($img){
+        if ($img) {
             $data = [
                 'nama'          =>  $this->input->post('nama', true),
                 'email'         =>  $this->input->post('email', true),
@@ -56,7 +56,7 @@ class Data_model extends CI_Model
                 'longitude'     =>  $this->input->post('longitude'),
                 'ket'           =>  $this->input->post('ket'),
             ];
-        }else{
+        } else {
             $data = [
                 'nama'          =>  $this->input->post('nama', true),
                 'email'         =>  $this->input->post('email', true),
@@ -78,7 +78,7 @@ class Data_model extends CI_Model
                 'ket'           =>  $this->input->post('ket'),
             ];
         }
-        
+
         $response = $this->_client->request('POST', 'karyawan', [
             'form_params' => $data
         ]);
@@ -126,58 +126,58 @@ class Data_model extends CI_Model
         return $result;
     }
 
-     ################################### MODEL DATA DIVISI #############################################
+    ################################### MODEL DATA DIVISI #############################################
 
-     public function getAllDivisi()
-     {
-         $response = $this->_client->request('GET', 'divisi/');
-         $result = json_decode($response->getBody(), true);
-         return $result;
-     }
- 
-     public function getDivisiById($id)
-     {
-         $response = $this->_client->request('GET', 'divisi/' . $id);
-         $result = json_decode($response->getBody(), true);
-         return $result;
-     }
- 
-     public function addDivisi()
-     {
-         $data = [
-             'nama_divisi'          =>  $this->input->post('nama_divisi', true),
-         ];
- 
-         $response = $this->_client->request('POST', 'divisi', [
-             'form_params' => $data
-         ]);
- 
-         $result = json_decode($response->getBody(), true);
-         return $result;
-     }
- 
-     public function updateDivisi($id)
-     {
-         $data = [
-             'nama_divisi'           =>  $this->input->post('nama_divisi'),
-         ];
- 
-         $response = $this->_client->request('PUT', 'divisi/' . $id, [
-             'form_params' => $data
-         ]);
- 
-         $result = json_decode($response->getBody(), true);
-         return $result;
-     }
- 
-     public function deleteDivisi($id)
-     {
-         $response = $this->_client->request('DELETE', 'divisi/' . $id);
-         $result = json_decode($response->getBody(), true);
-         return $result;
-     }
+    public function getAllDivisi()
+    {
+        $response = $this->_client->request('GET', 'divisi/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
 
-     ################################### MODEL DATA GAJI #############################################
+    public function getDivisiById($id)
+    {
+        $response = $this->_client->request('GET', 'divisi/' . $id);
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
+    public function addDivisi()
+    {
+        $data = [
+            'nama_divisi'          =>  $this->input->post('nama_divisi', true),
+        ];
+
+        $response = $this->_client->request('POST', 'divisi', [
+            'form_params' => $data
+        ]);
+
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
+    public function updateDivisi($id)
+    {
+        $data = [
+            'nama_divisi'           =>  $this->input->post('nama_divisi'),
+        ];
+
+        $response = $this->_client->request('PUT', 'divisi/' . $id, [
+            'form_params' => $data
+        ]);
+
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
+    public function deleteDivisi($id)
+    {
+        $response = $this->_client->request('DELETE', 'divisi/' . $id);
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
+    ################################### MODEL DATA GAJI #############################################
 
     public function getAllGaji()
     {
@@ -330,7 +330,7 @@ class Data_model extends CI_Model
         return $result;
     }
 
-    ################################### MODEL DATA KOTA KABUPATEN #############################################
+    ################################### MODEL DATA KOTA & KABUPATEN #############################################
 
     public function getAllKota()
     {
@@ -364,7 +364,7 @@ class Data_model extends CI_Model
     public function updateKota($id)
     {
         $data = [
-            'nama_kt_kb'          =>  $this->input->post('nama_kt_kb', true),
+            'nama_kt_kb'        =>  $this->input->post('nama_kt_kb', true),
             'kode_pos'          =>  $this->input->post('kode_pos', true),
         ];
 
@@ -435,5 +435,4 @@ class Data_model extends CI_Model
     }
 }
 
-
-/* End of file karyawan_m.php */
+/* End of file Data_model.php */

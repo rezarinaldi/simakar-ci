@@ -8,7 +8,7 @@
             <h2 class="section-title">Hi, <?= $karyawan['nama'] ?></h2>
 
             <div class="row mt-sm-4">
-                <div class="col-15 col-md-15 col-lg-8">
+                <div class="col-12 col-md-6 col-lg-6">
                     <div class="card profile-widget ">
                         <div class="text-muted" style="bottom:10px;right:10px; position:absolute;">
                             <i>Updated at:
@@ -18,7 +18,7 @@
                             </i>
                         </div>
                         <div class="profile-widget-header">
-                            <img alt="image" src="<?= base_url('assets/img/avatar/').$karyawan['gambar']?>" class="rounded-circle profile-widget-picture">
+                            <img alt="image" src="<?= base_url('assets/img/avatar/') . $karyawan['gambar'] ?>" class="rounded-circle profile-widget-picture">
                         </div>
 
                         <div class="profile-widget-description">
@@ -85,7 +85,11 @@
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                                 <!-- end tampil kode pos -->
+                            </div>
 
+                            <b>Latitude - Longitude: </b>
+                            <div class="profile-widget-name">
+                                <?= $karyawan['latitude'] ?> - <?= $karyawan['longitude'] ?>
                             </div>
 
                             <b>Bergabung pada: </b>
@@ -114,6 +118,17 @@
                             </div>
                             <a href="<?= base_url('menu/karyawan') ?>" class="btn btn-warning"><i class="fas fa-reply"></i> Kembali</a>
                             <a href="<?= base_url('karyawan/ubah/') . $karyawan['id'] ?>" class="btn btn-success ml-2 btnSubmit"><i class="far fa-edit"></i> Ubah</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Lokasi Rumah <?= $karyawan['nama'] ?></h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="profil" style="height: 600px;">
+                            </div>
                         </div>
                     </div>
                 </div>

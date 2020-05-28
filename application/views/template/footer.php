@@ -81,16 +81,49 @@
     mymap.addLayer(marker);
 </script>
 
-<!-- curLocation = [<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>] -->
-
 <!-- leaflet ambil koordinat (ubah) -->
 <script type="text/javascript">
     var curLocation = [0, 0];
     if (curLocation[0] == 0 && curLocation[1] == 0) {
-        curLocation = [-7.946263, 112.615548];
+        curLocation = [<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>];
     }
     // Create a map
-    var mymap = L.map('ubah').setView([-7.946263, 112.615548], 14);
+    var mymap = L.map('ubah').setView([<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>], 14);
+    // Add an OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
+
+    mymap.attributionControl.setPrefix(false);
+    var marker = new L.marker(curLocation, {
+        draggable: 'true'
+    });
+
+    marker.on('dragend', function(event) {
+        var position = marker.getLatLng();
+        marker.setLatLng(position, {
+            draggable: 'true'
+        }).bindPopup(position).update();
+        $("#Latitude").val(position.lat);
+        $("#Longitude").val(position.lng).keyup();
+    });
+
+    $("#Latitude, #Longitude").change(function() {
+        var position = [parseInt($("#Latitude").val()), parseInt($("#Longitude").val())];
+        marker.setLatLng(position, {
+            draggable: 'true'
+        }).bindPopup(position).update();
+        mymap.panTo(position);
+    });
+    mymap.addLayer(marker);
+</script>
+
+<!-- leaflet ambil koordinat (profil) -->
+<script type="text/javascript">
+    var curLocation = [0, 0];
+    if (curLocation[0] == 0 && curLocation[1] == 0) {
+        curLocation = [<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>];
+    }
+    // Create a map
+    var mymap = L.map('profil').setView([<?= $karyawan['latitude'] ?>, <?= $karyawan['longitude'] ?>], 14);
     // Add an OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
 
@@ -146,18 +179,13 @@
 
     // lokasi rumah
     <?php foreach ($karyawan as $kw) : ?>
-        <?php foreach ($kota as $kt) : ?>
-            <?php foreach ($kecamatan as $kec) : ?>
-                L.marker([<?= $kw['latitude'] ?>, <?= $kw['longitude'] ?>], {
-                        icon: icon_rumah
-                    }).addTo(mymap)
-                    .bindPopup("Nama Karyawan: <b><?= $kw['nama'] ?></b><br />" +
-                        "Alamat: <b><?= $kw['alamat'] ?></b><br />" +
-                        "Kota atau Kabupaten: <b><?= $kt['nama_kt_kb'] ?></b><br />" +
-                        "Kecamatan: <b><?= $kec['nama_kecamatan'] ?></b><br />" +
-                        "Keteragan: <b><?= $kw['ket'] ?></b>");
-            <?php endforeach; ?>
-        <?php endforeach; ?>
+        L.marker([<?= $kw['latitude'] ?>, <?= $kw['longitude'] ?>], {
+                icon: icon_rumah
+            }).addTo(mymap)
+            .bindPopup("Nama Karyawan: <b><?= $kw['nama'] ?></b><br />" +
+                "Alamat: <b><?= $kw['alamat'] ?></b><br />" +
+                "Keteragan: <b><?= $kw['ket'] ?></b><br /><br />" +
+                '<a href="<?= base_url('karyawan/profil/') . $kw['id'] ?>" class="btn btn-sm btn-primary text-light"><i class="fas fa-home"></i> Detail</a>');
     <?php endforeach; ?>
 </script>
 

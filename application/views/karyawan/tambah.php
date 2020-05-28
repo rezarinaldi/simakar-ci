@@ -18,8 +18,8 @@
                     <div class="card-header">
                         <h4>Form Tambah Data Karyawan</h4>
                     </div>
-                    <div class="card-body">
-                        <form action="<?= base_url('karyawan/tambah_simpan') ?>" enctype="multipart/form-data" method="post" class="needs-validation" novalidate="">
+                    <form action="<?= base_url('karyawan/tambah_simpan') ?>" enctype="multipart/form-data" method="post" class="needs-validation" novalidate="">
+                        <div class="card-body">
                             <div class="form-group">
                                 <label>Nama</label>
                                 <input type="text" name="nama" value="<?= set_value('karyawan') ?>" class="form-control" required="" autofocus>
@@ -31,12 +31,12 @@
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="pria" name="gender" class="custom-control-input" value="pria" required="">
-                                    <label class="custom-control-label" for="pria">pria</label>
+                                    <input type="radio" id="Pria" name="gender" class="custom-control-input" value="Pria" required="">
+                                    <label class="custom-control-label" for="Pria">Pria</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="wanita" name="gender" class="custom-control-input" value="wanita" required="">
-                                    <label class="custom-control-label" for="wanita">wanita</label>
+                                    <input type="radio" id="Wanita" name="gender" class="custom-control-input" value="Wanita" required="">
+                                    <label class="custom-control-label" for="Wanita">Wanita</label>
                                     <div class="invalid-feedback">
                                         Jenis kelamin tidak boleh kosong
                                     </div>
@@ -45,7 +45,7 @@
 
                             <div class="form-group">
                                 <label>Umur</label>
-                                <input type="number" name="umur" value="<?= set_value('umur') ?>" class="form-control" required="">
+                                <input type="text" name="umur" value="<?= set_value('umur') ?>" class="form-control" required="">
                                 <div class="invalid-feedback">
                                     Umur tidak boleh kosong
                                 </div>
@@ -53,7 +53,7 @@
 
                             <div class="form-group">
                                 <label>No. HP</label>
-                                <input type="number" name="no_hp" value="<?= set_value('no_hp') ?>" class="form-control" required="">
+                                <input type="text" name="no_hp" value="<?= set_value('no_hp') ?>" class="form-control" required="">
                                 <div class="invalid-feedback">
                                     No. HP tidak boleh kosong
                                 </div>
@@ -196,16 +196,16 @@
 
                             <div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file" name="gambar" value="<?= set_value('gambar') ?>" class="form-control">
+                                <input type="file" name="gambar" value="<?= set_value('gambar') ?>" class="form-control" required="">
                                 <div class="invalid-feedback">
                                     Gambar tidak boleh kosong
                                 </div>
                             </div>
-                    </div>
-                    <div class="card-footer text-right">
-                        <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
-                        <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
-                    </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-save"></i> Simpan</button>
+                            <button type="reset" class="btn btn-dark"><i class="fas fa-undo"></i> Reset</button>
+                        </div>
                     </form>
                 </div>
             </div>
