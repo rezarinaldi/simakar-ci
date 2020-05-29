@@ -13,11 +13,12 @@
         </div>
 
         <div class="row">
-            <div class="col-10 col-md-4 col-lg-4">
+            <div class="col-4 col-md-4 col-lg-4">
                 <div class="card">
                     <div class="card-header">
                         <h4>Form Ubah Data Karyawan</h4>
                     </div>
+                    <div id="flash-error" data-flasherror="<?= $this->session->flashdata('pesan'); ?>"></div>
                     <form action="<?= base_url('karyawan/ubah_simpan/') ?><?= $karyawan['id'] ?>" enctype="multipart/form-data" method="post">
                         <div class="card-body">
                             <div class="form-group">
@@ -116,7 +117,7 @@
                                     <?php foreach ($provinsi as $provinsi) : ?>
                                         <option value="<?= $provinsi['id'] ?>"><?= $provinsi['nama_provinsi'] ?></option>
                                     <?php endforeach; ?>
-                                    
+
                                 </select>
                                 <?= form_error('id_provinsi', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
@@ -232,7 +233,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-14 col-md-8 col-lg-8">
+            <div class="col-8 col-md-8 col-lg-8">
                 <div class="card">
                     <div class="card-header">
                         <h4>Lokasi Rumah Karyawan</h4>

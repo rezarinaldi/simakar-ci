@@ -14,6 +14,18 @@ if (flashData) {
 	});
 }
 
+// gagal
+
+const flashError = $("#flash-error").data("flasherror");
+
+if (flashError) {
+	iziToast.error({
+		title: "Gagal!",
+		message: flashError,
+		position: "center",
+	});
+}
+
 // keluar
 
 $("#keluar").on("click", function (e) {

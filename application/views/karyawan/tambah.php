@@ -18,6 +18,7 @@
                     <div class="card-header">
                         <h4>Form Tambah Data Karyawan</h4>
                     </div>
+                    <div id="flash-error" data-flasherror="<?= $this->session->flashdata('pesan'); ?>"></div>
                     <form action="<?= base_url('karyawan/tambah_simpan') ?>" enctype="multipart/form-data" method="post" class="needs-validation" novalidate="">
                         <div class="card-body">
                             <div class="form-group">
@@ -209,7 +210,6 @@
                     </form>
                 </div>
             </div>
-
             <div class="col-8 col-md-8 col-lg-8">
                 <div class="card">
                     <div class="card-header">

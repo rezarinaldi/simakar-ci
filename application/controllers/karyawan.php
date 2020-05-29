@@ -61,7 +61,7 @@ class karyawan extends CI_Controller
             if ($this->upload->do_upload('gambar')) {
                 $newImage = $this->upload->data('file_name');
             } else {
-                $this->session->set_flashdata('flash-error', "Periksa kembali file yang Anda upload");
+                $this->session->set_flashdata('pesan', "Periksa kembali file yang Anda upload");
                 redirect('karyawan/tambah');
             }
         }
@@ -92,7 +92,7 @@ class karyawan extends CI_Controller
 
                 $newImage = $this->upload->data('file_name');
             } else {
-                $this->session->set_flashdata('flash-error', "Periksa kembali file yang Anda upload");
+                $this->session->set_flashdata('pesan', "Periksa kembali file yang Anda upload");
                 redirect('karyawan/ubah');
             }
         }
