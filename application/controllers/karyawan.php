@@ -86,14 +86,12 @@ class karyawan extends CI_Controller
             if ($this->upload->do_upload('gambar')) {
                 $oldImage = $data['gambar'];
                 if ($oldImage != 'avatar-1.png') {
-                    # code...
                     unlink(FCPATH . 'assets/img/avatar/' . $oldImage);
                 }
-
                 $newImage = $this->upload->data('file_name');
             } else {
                 $this->session->set_flashdata('pesan', "Periksa kembali file yang Anda upload");
-                redirect('karyawan/ubah');
+                redirect('karyawan/ubah/'.$id);
             }
         }
 
