@@ -90,6 +90,11 @@ class Data_model extends CI_Model
     public function updateKaryawan($id)
     {
         $img = $_FILES['gambar']['name'];
+        if ($img) {
+            $response = $this->_client->request('PUT', 'karyawan/' . $id, [
+                'form_params' => ['gambar' => $img]
+            ]);
+        }
         $data = [
             'nama'          =>  $this->input->post('nama', true),
             'email'         =>  $this->input->post('email', true),
@@ -105,7 +110,6 @@ class Data_model extends CI_Model
             'id_divisi'     =>  $this->input->post('id_divisi'),
             'id_gaji'       =>  $this->input->post('id_gaji'),
             'umur'          =>  $this->input->post('umur'),
-            'gambar'        =>  $img,
             'latitude'      =>  $this->input->post('latitude'),
             'longitude'     =>  $this->input->post('longitude'),
             'ket'           =>  $this->input->post('ket'),

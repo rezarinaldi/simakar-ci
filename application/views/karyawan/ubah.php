@@ -223,7 +223,7 @@
                                 <a href="<?= base_url('assets/img/avatar/') . $karyawan['gambar'] ?>">
                                     <img class="mb-3" width="100px" src="<?= base_url('assets/img/avatar/') . $karyawan['gambar'] ?>">
                                 </a>
-                                <input type="file" name="gambar" value="<?= $karyawan['gambar'] ?>" class="form-control">
+                                <input type="file" name="gambar" class="form-control">
                             </div>
                         </div>
                         <div class="card-footer text-right">
