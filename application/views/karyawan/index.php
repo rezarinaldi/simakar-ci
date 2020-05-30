@@ -69,7 +69,7 @@
                                             <td>
                                                 <a href="<?= base_url('karyawan/profil/') . $kw['id'] ?>" class="btn btn-sm btn-primary"><i class="fas fa-search-plus"></i> Profil</a>
                                                 <a href="<?= base_url('karyawan/ubah/') . $kw['id'] ?>" class="btn btn-sm btn-success"><i class="far fa-edit"></i> Ubah</a>
-                                                <a href="<?= base_url('karyawan/hapus/') . $kw['id'] ?>" class="btn btn-sm btn-danger" id="hapus"><i class="far fa-trash-alt"></i> Hapus</a>
+                                                <a href="<?= base_url('karyawan/hapus/') . $kw['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin Data ini akan dihapus?');"><i class="far fa-trash-alt"></i> Hapus</a>
                                             </td>
                                         </tr>
                                     <?php $no++;

@@ -91,7 +91,7 @@ class karyawan extends CI_Controller
                 $newImage = $this->upload->data('file_name');
             } else {
                 $this->session->set_flashdata('pesan', "Periksa kembali file yang Anda upload");
-                redirect('karyawan/ubah/'.$id);
+                redirect('karyawan/ubah/' . $id);
             }
         }
 
