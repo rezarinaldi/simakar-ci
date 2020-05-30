@@ -19,13 +19,15 @@
                         <h4>Form Tambah Data Kecamatan</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url('kecamatan/tambah_simpan/') ?>" method="post">
+                        <form action="<?= base_url('kecamatan/tambah_simpan/') ?>" method="post" class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Kecamatan</label>
-                                        <input type="text" name="nama_kecamatan" value="<?= set_value('nama_kecamatan') ?>" class="form-control" autofocus>
-                                        <?= form_error('nama_kecamatan', '<div class="text-small text-danger">', '</div>') ?>
+                                        <input type="text" name="nama_kecamatan" value="<?= set_value('nama_kecamatan') ?>" class="form-control" autofocus required="">
+                                        <div class="invalid-feedback">
+                                            Nama kecamatan tidak boleh kosong
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -19,13 +19,15 @@
                         <h4>Form Tambah Data Jabatan</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url('jabatan/tambah_simpan/') ?>" method="post">
+                        <form action="<?= base_url('jabatan/tambah_simpan/') ?>" method="post" class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Jabatan</label>
-                                        <input type="text" name="nama_jabatan" value="<?= set_value('nama_jabatan') ?>" class="form-control" autofocus>
-                                        <?= form_error('nama_jabatan', '<div class="text-small text-danger">', '</div>') ?>
+                                        <input type="text" name="nama_jabatan" value="<?= set_value('nama_jabatan') ?>" class="form-control" autofocus required="">
+                                        <div class="invalid-feedback">
+                                            Nama jabatan tidak boleh kosong
+                                        </div>
                                     </div>
                                 </div>
                             </div>

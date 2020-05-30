@@ -22,7 +22,6 @@
 <!-- JS Libraies -->
 <script src="<?= base_url() ?>/assets/modules/izitoast/js/iziToast.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>/assets/modules/jquery.sparkline.min.js"></script>
-<script src="<?= base_url() ?>/assets/modules/chart.min.js"></script>
 <script src="<?= base_url() ?>/assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
 <script src="<?= base_url() ?>/assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 
@@ -182,9 +181,10 @@
         L.marker([<?= $kw['latitude'] ?>, <?= $kw['longitude'] ?>], {
                 icon: icon_rumah
             }).addTo(mymap)
-            .bindPopup("Nama Karyawan: <b><?= $kw['nama'] ?></b><br />" +
+            .bindPopup('<a href="<?= base_url('assets/img/avatar/') . $kw['gambar'] ?>"><img width="70px" src="<?= base_url('assets/img/avatar/') . $kw['gambar'] ?>"<br /><br /><br /></a>' +
+                "Nama Karyawan: <b><?= $kw['nama'] ?></b><br />" +
                 "Alamat: <b><?= $kw['alamat'] ?></b><br />" +
-                "Keteragan: <b><?= $kw['ket'] ?></b><br /><br />" +
+                "Keteragan Rumah: <b><?= $kw['ket'] ?></b><br /><br />" +
                 '<a href="<?= base_url('karyawan/profil/') . $kw['id'] ?>" class="btn btn-sm btn-primary text-light"><i class="fas fa-home"></i> Detail</a>');
     <?php endforeach; ?>
 </script>
@@ -193,84 +193,6 @@
 <script>
     $(document).ready(function() {
         $('#mytable').DataTable();
-    });
-</script>
-
-<!-- chartjs -->
-<script type="text/javascript">
-    var ctx = document.getElementById("chartDivisi").getContext("2d");
-    var myChart = new Chart(ctx, {
-        type: "doughnut",
-        data: {
-            datasets: [{
-                data: [80, 50, 40, 30, 20],
-                backgroundColor: [
-                    "#191d21",
-                    "#63ed7a",
-                    "#ffa426",
-                    "#fc544b",
-                    "#6777ef",
-                ],
-                label: "Dataset 1",
-            }, ],
-            labels: ["Black", "Green", "Yellow", "Red", "Blue"],
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: "bottom",
-            },
-        },
-    });
-
-    var ctx = document.getElementById("chartJabatan").getContext("2d");
-    var myChart = new Chart(ctx, {
-        type: "pie",
-        data: {
-            datasets: [{
-                data: [80, 50, 40, 30, 100],
-                backgroundColor: [
-                    "#191d21",
-                    "#63ed7a",
-                    "#ffa426",
-                    "#fc544b",
-                    "#6777ef",
-                ],
-                label: "Dataset 1",
-            }, ],
-            labels: ["Black", "Green", "Yellow", "Red", "Blue"],
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: "bottom",
-            },
-        },
-    });
-
-    var ctx = document.getElementById("chartProvinsi").getContext("2d");
-    var myChart = new Chart(ctx, {
-        type: "doughnut",
-        data: {
-            datasets: [{
-                data: [80, 50, 40, 30, 20],
-                backgroundColor: [
-                    "#191d21",
-                    "#63ed7a",
-                    "#ffa426",
-                    "#fc544b",
-                    "#6777ef",
-                ],
-                label: "Dataset 1",
-            }, ],
-            labels: ["Black", "Green", "Yellow", "Red", "Blue"],
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: "bottom",
-            },
-        },
     });
 </script>
 

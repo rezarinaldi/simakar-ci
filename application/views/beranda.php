@@ -5,26 +5,11 @@
             <h1><?= $title ?></h1>
         </div>
         <div class="row">
-            <div class="col-12 mb-4">
+            <div class="col-8">
                 <div class="hero text-white hero-bg-image hero-bg-parallax" data-background="<?= base_url() ?>/assets/img/unsplash/photo-1478774519940-123bd0ab1e0b.jpg">
                     <div class="hero-inner">
                         <h2>Hi, <?= $this->session->userdata('nama') ?>!</h2>
                         <p class="lead">Selamat datang kembali.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Daftar Divisi</h4>
-                        <div class="card-header-action">
-                            <a href="<?= base_url('divisi') ?>" class="btn btn-primary">Lihat Detail <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="chartDivisi" height="158"></canvas>
                     </div>
                 </div>
             </div>
@@ -55,34 +40,6 @@
                                 Lihat Detail <i class="fas fa-chevron-right"></i>
                             </a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Daftar Jabatan</h4>
-                        <div class="card-header-action">
-                            <a href="<?= base_url('jabatan') ?>" class="btn btn-primary">Lihat Detail <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="chartJabatan"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Daftar Provinsi</h4>
-                        <div class="card-header-action">
-                            <a href="<?= base_url('provinsi') ?>" class="btn btn-primary">Lihat Detail <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="chartProvinsi"></canvas>
                     </div>
                 </div>
             </div>

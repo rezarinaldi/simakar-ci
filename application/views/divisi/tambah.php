@@ -19,13 +19,15 @@
                         <h4>Form Tambah Data Divisi</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url('divisi/tambah_simpan/') ?>" method="post">
+                        <form action="<?= base_url('divisi/tambah_simpan/') ?>" method="post" class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Divisi</label>
-                                        <input type="text" name="nama_divisi" value="<?= set_value('nama_divisi') ?>" class="form-control" autofocus>
-                                        <?= form_error('nama_divisi', '<div class="text-small text-danger">', '</div>') ?>
+                                        <input type="text" name="nama_divisi" value="<?= set_value('nama_divisi') ?>" class="form-control" autofocus required="">
+                                        <div class="invalid-feedback">
+                                            Nama divisi tidak boleh kosong
+                                        </div>
                                     </div>
                                 </div>
                             </div>

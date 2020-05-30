@@ -13,12 +13,10 @@
                     <h4>Tentang Kami</h4>
                 </div>
                 <div class="card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Kami adalah sebuah sistem yang bertujuan untuk menyediakan sebuah platform untuk admin yang memanajemen karyawan pada perusahaan PT. Coba Coding. Pada platform ini memiliki fitur peta, agar admin dapat mengetahui lokasi rumah karyawan PT. Coba Coding.</p>
+                    <h4>🌐 Kontak kami: </h4>
+                    <h5>🔗 <a href="https://nrdnisml.github.io/">M. Nuruddin Ismail</a></h5>
+                    <h5>🔗 <a href="http://rez4rinaldi.github.io/">Reza Rinaldi</a></h5>
                 </div>
                 <div class="card-footer bg-whitesmoke font-weight-bold">
                     Akhukum fillah: M. Nuruddin Ismail (23) & Reza Rinaldi (27) <div class="bullet"></div> Kelas TI-2D

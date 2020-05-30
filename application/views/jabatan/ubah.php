@@ -19,7 +19,7 @@
                         <h4>Form Ubah Data Jabatan</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= base_url('jabatan/ubah_simpan/') ?><?= $jabatan['id'] ?>" method="post">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

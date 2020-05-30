@@ -19,13 +19,15 @@
                         <h4>Form Tambah Data Gaji</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url('gaji/tambah_simpan') ?>" method="post">
+                        <form action="<?= base_url('gaji/tambah_simpan') ?>" method="post" class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Jumlah Gaji</label>
-                                        <input type="text" name="jumlah_gaji" value="<?= set_value('jumlah_gaji') ?>" class="form-control" autofocus>
-                                        <?= form_error('jumlah_gaji', '<div class="text-small text-danger">', '</div>') ?>
+                                        <input type="text" name="jumlah_gaji" value="<?= set_value('jumlah_gaji') ?>" class="form-control" autofocus required="">
+                                        <div class="invalid-feedback">
+                                            Jumlah gaji tidak boleh kosong
+                                        </div>
                                     </div>
                                 </div>
                             </div>

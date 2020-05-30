@@ -19,13 +19,15 @@
                         <h4>Form Tambah Data Provinsi</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url('provinsi/tambah_simpan/') ?>" method="post">
+                        <form action="<?= base_url('provinsi/tambah_simpan/') ?>" method="post" class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Provinsi</label>
-                                        <input type="text" name="nama_provinsi" value="<?= set_value('nama_provinsi') ?>" class="form-control" autofocus>
-                                        <?= form_error('nama_provinsi', '<div class="text-small text-danger">', '</div>') ?>
+                                        <input type="text" name="nama_provinsi" value="<?= set_value('nama_provinsi') ?>" class="form-control" autofocus required="">
+                                        <div class="invalid-feedback">
+                                            Nama provinsi tidak boleh kosong
+                                        </div>
                                     </div>
                                 </div>
                             </div>
