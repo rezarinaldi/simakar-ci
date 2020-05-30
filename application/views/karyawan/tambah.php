@@ -197,10 +197,7 @@
 
                             <div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file" name="gambar" value="<?= set_value('gambar') ?>" class="form-control" required="">
-                                <div class="invalid-feedback">
-                                    Gambar tidak boleh kosong
-                                </div>
+                                <input type="file" name="gambar" value="<?= set_value('gambar') ?>" class="form-control" >
                             </div>
                         </div>
                         <div class="card-footer text-right">
