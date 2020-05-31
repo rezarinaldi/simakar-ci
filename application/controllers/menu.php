@@ -12,21 +12,14 @@ class menu extends CI_Controller
 
 	public function index()
 	{
-		// get
 		$data['title'] = 'Beranda';
 		$data['karyawan'] = $this->data->getAllKaryawan();
 		$data['divisi'] = $this->data->getAllDivisi();
 		$data['jabatan'] = $this->data->getAllJabatan();
 		$data['provinsi'] = $this->data->getAllProvinsi();
-
-		// count
-		$data['karyawan'] = $this->data->countAllKaryawan();
-		$data['gaji'] = $this->data->countAllGaji();
-		$data['divisi'] = $this->data->countAllDivisi();
-		$data['jabatan'] = $this->data->countAllJabatan();
-		$data['kecamatan'] = $this->data->countAllkecamatan();
-		$data['kota'] = $this->data->countAllKota();
-		$data['provinsi'] = $this->data->countAllProvinsi();
+		$data['kota'] = $this->data->getAllKota();
+		$data['gaji'] = $this->data->getAllGaji();
+		$data['kecamatan'] = $this->data->getAllKecamatan();
 
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
