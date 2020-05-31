@@ -18,6 +18,13 @@ class Data_model extends CI_Model
 
     ################################### MODEL DATA KARYAWAN #############################################
 
+    public function countAllKaryawan()
+    {
+        $response = $this->_client->request('GET', 'karyawan/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
     public function getAllKaryawan()
     {
         $response = $this->_client->request('GET', 'karyawan/');
@@ -132,6 +139,13 @@ class Data_model extends CI_Model
 
     ################################### MODEL DATA DIVISI #############################################
 
+    public function countAllDivisi()
+    {
+        $response = $this->_client->request('GET', 'divisi/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
     public function getAllDivisi()
     {
         $response = $this->_client->request('GET', 'divisi/');
@@ -182,6 +196,13 @@ class Data_model extends CI_Model
     }
 
     ################################### MODEL DATA GAJI #############################################
+
+    public function countAllGaji()
+    {
+        $response = $this->_client->request('GET', 'gaji/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
 
     public function getAllGaji()
     {
@@ -234,6 +255,13 @@ class Data_model extends CI_Model
 
     ################################### MODEL DATA JABATAN #############################################
 
+    public function countAllJabatan()
+    {
+        $response = $this->_client->request('GET', 'jabatan/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
     public function getAllJabatan()
     {
         $response = $this->_client->request('GET', 'jabatan/');
@@ -285,6 +313,13 @@ class Data_model extends CI_Model
 
     ################################### MODEL DATA KECAMATAN #############################################
 
+    public function countAllKecamatan()
+    {
+        $response = $this->_client->request('GET', 'kecamatan/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
+
     public function getAllKecamatan()
     {
         $response = $this->_client->request('GET', 'kecamatan/');
@@ -335,6 +370,13 @@ class Data_model extends CI_Model
     }
 
     ################################### MODEL DATA KOTA & KABUPATEN #############################################
+
+    public function countAllKota()
+    {
+        $response = $this->_client->request('GET', 'kota/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
 
     public function getAllKota()
     {
@@ -388,6 +430,13 @@ class Data_model extends CI_Model
     }
 
     ################################### MODEL DATA PROVINSI #############################################
+
+    public function countAllProvinsi()
+    {
+        $response = $this->_client->request('GET', 'provinsi/');
+        $result = json_decode($response->getBody(), true);
+        return $result;
+    }
 
     public function getAllProvinsi()
     {

@@ -102,7 +102,7 @@
 
                             <div class="form-group">
                                 <label>Longitude</label>
-                                <input id="Longitude" name="longitude" value="<?= set_value('longitude') ?>" class="form-control" value="<?= set_value('longitude') ?>" required="" readonly>
+                                <input id="Longitude" name="longitude" value="<?= set_value('longitude') ?>" class="form-control" required="" readonly>
                                 <div class="invalid-feedback">
                                     Longitude tidak boleh kosong
                                 </div>
@@ -110,7 +110,7 @@
 
                             <div class="form-group">
                                 <label>Latitude</label>
-                                <input id="Latitude" name="latitude" value="<?= set_value('latitude') ?>" class="form-control" value="<?= set_value('latitude') ?>" required="" readonly>
+                                <input id="Latitude" name="latitude" value="<?= set_value('latitude') ?>" class="form-control" required="" readonly>
                                 <div class="invalid-feedback">
                                     Latitude tidak boleh kosong
                                 </div>
@@ -197,7 +197,7 @@
 
                             <div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file" name="gambar" value="<?= set_value('gambar') ?>" class="form-control" >
+                                <input type="file" name="gambar" value="<?= set_value('gambar') ?>" class="form-control">
                             </div>
                         </div>
                         <div class="card-footer text-right">

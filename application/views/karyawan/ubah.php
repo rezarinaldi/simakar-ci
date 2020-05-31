@@ -93,13 +93,13 @@
 
                             <div class="form-group">
                                 <label>Longitude</label>
-                                <input id="Longitude" type="text" name="longitude" value="<?= $karyawan['longitude'] ?>" class="form-control" value="<?= set_value('longitude') ?>" readonly>
+                                <input id="Longitude" type="text" name="longitude" value="<?= $karyawan['longitude'] ?>" class="form-control" readonly>
                                 <?= form_error('longitude', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
 
                             <div class="form-group">
                                 <label>Latitude</label>
-                                <input id="Latitude" name="latitude" value="<?= $karyawan['latitude'] ?>" class="form-control" value="<?= set_value('latitude') ?>" readonly>
+                                <input id="Latitude" name="latitude" value="<?= $karyawan['latitude'] ?>" class="form-control" readonly>
                                 <?= form_error('latitude', '<div class="text-small text-danger">', '</div>') ?>
                             </div>
 
